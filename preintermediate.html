@@ -1,0 +1,2122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChinesePod · Lesson 4275 · Pre-Intermediate Quiz</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@400;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+/* ── RESET & ROOT ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  /* ChinesePod brand colors */
+  --red : #e1001e;
+  --red-bg:#FEF2F3;
+  --red-b:#FECDCA;
+  --black:#000000;
+  --white:#FFFFFF;
+
+  /* UI colors */
+  --bg:#F8F7F5;
+  --card:#FFFFFF;
+  --border:#E2E0DC;
+  --ink:#1A1917;
+  --ink2:#6B6860;
+  --ink3:#AEACA6;
+  --green:#1A7A3C;
+  --green-bg:#F0FDF5;
+  --green-b:#A7F3C0;
+  --amber:#B45309;
+  --amber-bg:#FFFBEB;
+  --amber-b:#FDE68A;
+  --blue:#2487C1;
+  --blue-bg:#EFF6FF;
+  --blue-b:#BFDBFE;
+
+  --shadow:0 2px 12px rgba(26,25,23,.07);
+  --shadow-lg:0 12px 48px rgba(26,25,23,.13);
+  --radius:20px;
+}
+
+html,body{
+  height:100%;
+  font-family:'Roboto',sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  overflow-x:hidden;
+}
+
+/* ── SCREENS ── */
+.screen{display:none;min-height:100vh;width:100%}
+.screen.active{display:flex;flex-direction:column;align-items:center;justify-content:center}
+
+/* ══════════════════════════════
+   LEVEL SELECTOR SCREEN
+══════════════════════════════ */
+#s-level{
+  padding:40px 20px;
+  background:var(--bg);
+  position:relative;
+  overflow:hidden;
+}
+.level-bg{
+  position:fixed;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Noto Sans SC',serif;
+  font-size:380px;
+  color:rgba(225,0,30,.04);
+  pointer-events:none;user-select:none;z-index:0;
+  animation:bgSway 8s ease-in-out infinite;
+}
+@keyframes bgSway{0%,100%{transform:scale(1) rotate(-1deg)}50%{transform:scale(1.03) rotate(1deg)}}
+
+.level-wrap{
+  position:relative;z-index:1;
+  max-width:560px;width:100%;
+  text-align:center;
+}
+.cp-logo{
+  display:inline-flex;align-items:center;gap:10px;
+  margin-bottom:36px;
+}
+.cp-logo-icon{
+  width:100%;height:50px;
+  position:relative;
+}
+/* .cp-logo-icon svg{width:100%;height:100%} */
+.cp-logo-text{
+  font-family:'Roboto',sans-serif;
+  font-size:22px;font-weight:700;
+  color:var(--ink);
+  letter-spacing:-.02em;
+}
+
+.level-eyebrow{
+  font-size:11px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--red);
+  margin-bottom:14px;
+}
+.level-h{
+  font-family:'Roboto Slab',serif;
+  font-size:clamp(30px,5vw,42px);
+  font-weight:700;
+  line-height:1.1;
+  color:var(--ink);
+  margin-bottom:12px;
+}
+.level-sub{
+  font-size:15px;color:var(--ink2);
+  font-weight:300;line-height:1.7;
+  margin-bottom:40px;
+}
+
+.level-cards{
+  display:flex;flex-direction:column;gap:14px;
+  margin-bottom:32px;
+}
+.level-card{
+  background:var(--card);
+  border:2px solid var(--border);
+  border-radius:var(--radius);
+  padding:22px 28px;
+  display:flex;align-items:center;gap:20px;
+  cursor:pointer;text-align:left;
+  transition:all .22s cubic-bezier(.4,0,.2,1);
+  animation:cardIn .45s cubic-bezier(.34,1.56,.64,1) both;
+}
+.level-card:nth-child(1){animation-delay:.05s}
+.level-card:nth-child(2){animation-delay:.12s}
+.level-card:nth-child(3){animation-delay:.19s}
+@keyframes cardIn{from{opacity:0;transform:translateY(20px) scale(.96)}to{opacity:1;transform:none}}
+.level-card:hover{
+  border-color:var(--red);
+  transform:translateX(6px);
+  box-shadow:0 6px 24px rgba(225,0,30,.12);
+}
+.level-badge{
+  width:52px;height:52px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  font-family:'Noto Sans SC',serif;
+  font-size:28px;
+  font-weight:700;
+}
+.lv-newbie .level-badge{background:var(--green-bg);color:var(--green)}
+.lv-preint .level-badge{background:var(--blue-bg);color:var(--blue)}
+.lv-upper .level-badge{background:var(--red-bg);color:var(--red)}
+
+.level-info{flex:1}
+.level-name{
+  font-weight:700;font-size:17px;
+  color:var(--ink);margin-bottom:3px;
+}
+.lesson-meta{font-size:12px;color:var(--red);font-weight:700;margin-bottom:5px;line-height:1.45}
+.lesson-level{color:var(--ink2);font-weight:500}
+.level-desc{
+  font-size:13px;color:var(--ink2);font-weight:400;line-height:1.5;
+}
+.level-pill{
+  font-size:10px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;padding:4px 12px;border-radius:100px;
+  flex-shrink:0;
+}
+.lv-newbie .level-pill{background:var(--green-bg);color:var(--green)}
+.lv-preint .level-pill{background:var(--blue-bg);color:var(--blue)}
+.lv-upper .level-pill{background:var(--red-bg);color:var(--red)}
+
+.level-footer{
+  font-size:12px;color:var(--ink3);font-weight:400;
+}
+
+/* ══════════════════════════════
+   INTRO SCREEN
+══════════════════════════════ */
+#s-intro{padding:40px 20px;position:relative;overflow:hidden}
+.intro-bg{
+  position:fixed;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Noto Sans SC',serif;
+  font-size:340px;color:rgba(225,0,30,.04);
+  pointer-events:none;user-select:none;z-index:0;
+  animation:bgSway 6s ease-in-out infinite;
+}
+.intro-box{
+  position:relative;z-index:1;max-width:520px;width:100%;
+  background:var(--card);border:1px solid var(--border);
+  border-radius:28px;padding:48px 40px;
+  box-shadow:var(--shadow-lg);text-align:center;
+}
+.intro-pill{
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--red-bg);border:1px solid var(--red-b);
+  border-radius:100px;padding:5px 16px;
+  font-size:11px;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--red);
+  margin-bottom:24px;
+}
+.intro-pill-dot{width:6px;height:6px;border-radius:50%;background:var(--red)}
+.intro-h{
+  font-family:'Roboto Slab',serif;
+  font-size:clamp(28px,5vw,40px);
+  font-weight:700;letter-spacing:-.02em;line-height:1.15;
+  margin-bottom:10px;
+}
+.intro-h span{color:var(--red)}
+.intro-p{font-size:15px;color:var(--ink2);line-height:1.7;margin-bottom:18px;font-weight:300}
+.intro-lesson{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:12px 16px;margin:0 auto 22px;font-size:13px;line-height:1.65;color:var(--ink2)}
+.intro-lesson strong{color:var(--ink)}
+
+.intro-chars{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:28px}
+.ic{
+  background:var(--bg);border:1px solid var(--border);border-radius:14px;
+  padding:12px 14px;display:flex;flex-direction:column;align-items:center;gap:3px;
+  animation:icIn .5s cubic-bezier(.34,1.56,.64,1) both;cursor:default;
+  transition:all .22s;
+}
+.ic:hover{border-color:var(--red);background:#fff;transform:translateY(-3px);box-shadow:0 6px 20px rgba(225,0,30,.1)}
+@keyframes icIn{from{opacity:0;transform:translateY(18px) scale(.88)}to{opacity:1;transform:none}}
+.ic-c{font-family:'Noto Sans SC',serif;font-size:30px;line-height:1;color:var(--ink)}
+.ic-p{font-size:10px;font-weight:700;color:var(--red);letter-spacing:.02em}
+.ic-m{font-size:9px;color:var(--ink3);font-weight:500}
+
+.intro-btns{display:flex;flex-direction:column;gap:10px;align-items:center}
+.btn-start{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--red);color:#fff;border:none;border-radius:100px;
+  padding:15px 36px;font-family:'Roboto',sans-serif;font-size:15px;font-weight:700;
+  cursor:pointer;letter-spacing:.01em;
+  box-shadow:0 4px 20px rgba(225,0,30,.28);transition:all .2s;
+}
+.btn-start:hover{background:#c50019;transform:translateY(-2px);box-shadow:0 8px 28px rgba(225,0,30,.36)}
+.btn-back-level{
+  background:none;border:none;
+  font-size:13px;color:var(--ink3);font-weight:500;cursor:pointer;
+  font-family:'Roboto',sans-serif;padding:4px 8px;transition:color .2s;
+}
+.btn-back-level:hover{color:var(--ink)}
+
+/* ══════════════════════════════
+   GAME SCREEN
+══════════════════════════════ */
+#s-game{justify-content:flex-start;padding:0}
+
+/* top bar */
+.tb{
+  width:100%;background:var(--card);border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:14px;padding:14px 24px;
+  position:sticky;top:0;z-index:100;
+}
+.tb-logo{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;flex-shrink:0}
+.tb-logo-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--red);
+}
+.tb-level-pill{
+  font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  padding:3px 9px;border-radius:100px;background:var(--red-bg);color:var(--red);
+}
+
+.tb-bar-wrap{flex:1;display:flex;flex-direction:column;gap:5px;min-width:0}
+.tb-track{height:4px;background:var(--bg);border-radius:2px;overflow:hidden}
+.tb-fill{height:100%;background:var(--red);border-radius:2px;transition:width .6s cubic-bezier(.4,0,.2,1)}
+
+.tb-cnt{font-size:12px;font-weight:700;color:var(--ink2);white-space:nowrap;flex-shrink:0}
+
+/* game stage */
+.stage{
+  width:100%;max-width:680px;
+  padding:32px 20px 48px;
+  display:flex;flex-direction:column;align-items:center;gap:22px;
+}
+
+/* ── Question card ── */
+.q-card{
+  width:100%;background:var(--card);border:1px solid var(--border);
+  border-radius:24px;padding:40px;
+  display:flex;flex-direction:column;align-items:center;gap:20px;
+  box-shadow:var(--shadow);
+}
+.char-stage{
+  padding: 30px 20px;
+  position:relative;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.char-grid-lines{
+  position:absolute;inset:0;border:2px solid var(--border);border-radius:18px;
+}
+.char-grid-lines::before{
+  content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--border);
+}
+.char-grid-lines::after{
+  content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:var(--border);
+}
+.the-char{
+  font-family:'Noto Sans SC',serif;font-size:96px;font-weight:700;
+  color:var(--ink);line-height:1;position:relative;z-index:2;user-select:none;
+}
+.the-char.pop{animation:cPop .5s cubic-bezier(.34,1.56,.64,1)}
+.the-char.shake{animation:cShake .45s ease}
+.the-char.cheer{animation:cCheer .55s cubic-bezier(.34,1.56,.64,1)}
+@keyframes cPop{from{transform:scale(.4);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes cShake{0%,100%{transform:translateX(0) rotate(0)}20%{transform:translateX(-10px) rotate(-5deg)}40%{transform:translateX(10px) rotate(5deg)}60%{transform:translateX(-7px) rotate(-3deg)}80%{transform:translateX(7px) rotate(3deg)}}
+@keyframes cCheer{0%{transform:scale(1)}35%{transform:scale(1.28) rotate(8deg)}70%{transform:scale(.95) rotate(-3deg)}100%{transform:scale(1) rotate(0)}}
+
+.q-text{
+  text-align:center;
+  font-size:18px;font-weight:500;color:var(--ink);line-height:1.5;
+}
+.q-speaking{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--blue-bg);border:1px solid var(--blue-b);border-radius:100px;
+  padding:6px 16px;font-size:12px;font-weight:600;color:var(--blue);
+  animation:fadeIn .3s ease;
+}
+.wave{display:inline-flex;align-items:flex-end;gap:3px;margin-left:2px}
+.wave span{width:3px;border-radius:2px;background:var(--blue);animation:wv .8s ease-in-out infinite}
+.wave span:nth-child(1){height:6px;animation-delay:0s}
+.wave span:nth-child(2){height:12px;animation-delay:.15s}
+.wave span:nth-child(3){height:8px;animation-delay:.3s}
+.wave span:nth-child(4){height:12px;animation-delay:.45s}
+.wave span:nth-child(5){height:6px;animation-delay:.6s}
+@keyframes wv{0%,100%{transform:scaleY(.5)}50%{transform:scaleY(1)}}
+
+/* hint pill */
+.hint-pill{
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--amber-bg);border:1px solid var(--amber-b);border-radius:100px;
+  padding:7px 16px;font-size:12px;font-weight:500;color:var(--amber);
+  opacity:0;transform:translateY(6px);transition:all .35s;
+}
+.hint-pill.show{opacity:1;transform:none}
+
+/* ── OPTIONS ──
+   KEY FIX: No character shown in choices.
+   Clean text-only option buttons.
+── */
+.opts{width:100%;display:flex;flex-direction:column;gap:10px}
+.opt{
+  background:var(--card);border:2px solid var(--border);border-radius:16px;
+  padding:16px 20px;display:flex;align-items:center;gap:14px;
+  cursor:pointer;text-align:left;width:100%;outline:none;
+  transition:border-color .18s, background .18s, transform .18s;
+  animation:optSlide .35s cubic-bezier(.34,1.56,.64,1) both;
+}
+.opt:nth-child(1){animation-delay:.05s}
+.opt:nth-child(2){animation-delay:.12s}
+.opt:nth-child(3){animation-delay:.19s}
+@keyframes optSlide{from{opacity:0;transform:translateY(16px) scale(.96)}to{opacity:1;transform:none}}
+.opt:hover:not(:disabled){border-color:var(--red);background:var(--red-bg);transform:translateX(5px)}
+.opt:disabled{cursor:default}
+
+.opt-num{
+  width:34px;height:34px;border-radius:10px;
+  background:var(--bg);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;color:var(--ink2);flex-shrink:0;
+  transition:all .2s;
+}
+/* No opt-char-sm — removed per client feedback */
+.opt-label{
+  font-size:16px;font-weight:500;color:var(--ink);flex:1;transition:color .2s;
+}
+.opt-pinyin{
+  font-size:12px;color:var(--ink3);font-weight:400;
+  font-family:'Noto Sans SC',serif;margin-top:1px;
+}
+.opt-check{
+  width:22px;height:22px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;font-size:12px;flex-shrink:0;transition:opacity .2s;
+}
+
+/* option states */
+.opt.s-correct{background:var(--green-bg);border-color:var(--green);transform:none;animation:slideRight .35s ease}
+.opt.s-correct .opt-num{background:var(--green);border-color:var(--green);color:#fff}
+.opt.s-correct .opt-label{color:var(--green)}
+.opt.s-correct .opt-check{opacity:1;background:var(--green);color:#fff}
+@keyframes slideRight{from{transform:translateX(-8px);opacity:.6}to{transform:none;opacity:1}}
+
+.opt.s-wrong{background:var(--red-bg);border-color:var(--red);animation:optWrong .45s ease}
+.opt.s-wrong .opt-num{background:var(--red);border-color:var(--red);color:#fff}
+.opt.s-wrong .opt-label{color:var(--red)}
+.opt.s-wrong .opt-check{opacity:1;background:var(--red);color:#fff}
+@keyframes optWrong{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-5px)}80%{transform:translateX(5px)}}
+
+.opt.s-reveal{background:var(--green-bg);border-color:var(--green);border-style:dashed}
+.opt.s-reveal .opt-label{color:var(--green)}
+
+/* ── GUIDE PANEL ── */
+.guide{
+  width:100%;background:var(--card);border:1px solid var(--border);
+  border-radius:24px;overflow:hidden;box-shadow:var(--shadow);
+  animation:guideIn .5s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes guideIn{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:none}}
+
+/* Comparison section — shows chars here AFTER answer, not in options */
+.cmp-section{padding:28px 28px 20px;border-bottom:1px solid var(--border)}
+.cmp-label{
+  font-size:10px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink3);margin-bottom:18px;
+}
+.cmp-row{display:flex;gap:10px;align-items:stretch;flex-wrap:wrap}
+.cmp-card{
+  flex:1;min-width:80px;border-radius:16px;padding:18px 10px;
+  display:flex;flex-direction:column;align-items:center;gap:5px;
+  border:2px solid var(--border);background:var(--bg);
+  transition:all .4s cubic-bezier(.34,1.56,.64,1);
+}
+.cmp-card.c-correct{background:var(--green-bg);border-color:var(--green)}
+.cmp-card.c-wrong{background:var(--red-bg);border-color:var(--red)}
+.cmp-card.animate-swap{animation:swapIn .7s cubic-bezier(.34,1.56,.64,1)}
+@keyframes swapIn{0%{transform:scale(.5) rotateY(90deg);opacity:0}60%{transform:scale(1.12) rotateY(-5deg)}100%{transform:scale(1) rotateY(0);opacity:1}}
+
+.cmp-big-char{
+  font-family:'Noto Sans SC',serif;font-size:56px;font-weight:700;
+  line-height:1;color:var(--ink);
+}
+.cmp-card.c-correct .cmp-big-char{color:var(--green)}
+.cmp-card.c-wrong .cmp-big-char{color:var(--red)}
+.cmp-py{font-size:13px;font-weight:700;color:var(--red);font-family:'Noto Sans SC',serif}
+.cmp-card.c-correct .cmp-py{color:var(--green)}
+.cmp-en{font-size:11px;color:var(--ink2);font-weight:500;text-align:center}
+.cmp-tag{
+  font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  padding:3px 10px;border-radius:100px;margin-top:2px;
+}
+.cmp-card.c-correct .cmp-tag{background:var(--green);color:#fff}
+.cmp-card.c-wrong .cmp-tag{background:var(--red);color:#fff}
+.cmp-arrow{
+  display:flex;align-items:center;justify-content:center;
+  color:var(--ink3);font-size:18px;flex-shrink:0;padding:0 2px;
+  opacity:0;animation:arrowIn .5s ease .4s forwards;
+}
+@keyframes arrowIn{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}
+
+/* Guide body */
+.guide-body{padding:22px 28px;display:flex;flex-direction:column;gap:14px}
+.g-sec-title{
+  font-size:10px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink3);margin-bottom:5px;
+}
+.g-why{
+  background:var(--red-bg);border:1px solid var(--red-b);
+  border-left:3px solid var(--red);border-radius:12px;padding:14px 16px;
+}
+.g-why p{font-size:13px;line-height:1.75;color:#7F1D1D}
+.g-story{
+  background:var(--blue-bg);border:1px solid var(--blue-b);border-radius:12px;padding:14px 16px;
+}
+.g-story p{font-size:13px;line-height:1.75;color:#1E40AF}
+.g-tip{
+  background:var(--amber-bg);border:1px solid var(--amber-b);
+  border-left:3px solid #F59E0B;border-radius:12px;padding:14px 16px;
+}
+.g-tip p{font-size:13px;line-height:1.75;color:#78350F}
+.g-voice{
+  display:flex;align-items:center;gap:8px;
+  background:var(--bg);border:1px solid var(--border);border-radius:100px;
+  padding:8px 16px;font-size:12px;font-weight:600;color:var(--ink2);
+  cursor:pointer;align-self:flex-start;
+  transition:all .2s;font-family:'Roboto',sans-serif;
+}
+.g-voice:hover{background:var(--ink);color:#fff}
+
+/* correct feedback banner */
+.correct-banner{
+  width:100%;background:var(--green-bg);border:1px solid var(--green-b);
+  border-radius:18px;padding:20px 24px;
+  display:flex;align-items:center;gap:14px;
+  animation:guideIn .4s ease;
+}
+.cb-icon{
+  width:40px;height:40px;border-radius:12px;
+  background:var(--green);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;flex-shrink:0;
+}
+.cb-title{font-size:15px;font-weight:700;color:var(--green);margin-bottom:2px}
+.cb-text{font-size:13px;color:var(--ink2);line-height:1.5}
+
+/* Correct: also shows the character with pinyin */
+.cb-char-reveal{
+  display:flex;align-items:center;gap:12px;
+  margin-left:auto;flex-shrink:0;
+}
+.cb-char{
+  font-family:'Noto Sans SC',serif;font-size:40px;font-weight:700;
+  color:var(--green);line-height:1;
+}
+.cb-char-info{display:flex;flex-direction:column;gap:1px}
+.cb-py{font-size:12px;font-weight:700;color:var(--green)}
+.cb-en{font-size:11px;color:var(--ink3)}
+
+/* NEXT + PLAY AGAIN buttons */
+.btn-row{
+  width:100%;display:flex;gap:10px;align-items:center;
+  animation:guideIn .3s ease;
+}
+.btn-next{
+  flex:1;padding:16px;background:var(--red);color:#fff;
+  border:none;border-radius:14px;
+  font-family:'Roboto',sans-serif;font-size:15px;font-weight:700;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;
+  box-shadow:0 4px 16px rgba(225,0,30,.22);transition:all .2s;
+}
+.btn-next:hover{background:#c50019;box-shadow:0 6px 20px rgba(225,0,30,.32);transform:translateY(-1px)}
+.btn-play-again{
+  flex:1;padding:16px;background:var(--card);color:var(--red);
+  border:2px solid var(--red-b);border-radius:14px;
+  font-family:'Roboto',sans-serif;font-size:15px;font-weight:700;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;
+  transition:all .2s;
+}
+.btn-play-again:hover{background:var(--red-bg);border-color:var(--red);transform:translateY(-1px)}
+@media(max-width:520px){.btn-row{flex-direction:column}.btn-next,.btn-play-again{width:100%}}
+
+/* ══════════════════════════════
+   RESULTS SCREEN
+══════════════════════════════ */
+#s-results{padding:40px 20px}
+.res-box{
+  background:var(--card);border:1px solid var(--border);border-radius:28px;
+  padding:48px 40px;max-width:520px;width:100%;text-align:center;
+  box-shadow:var(--shadow-lg);
+}
+.ring-wrap{width:120px;height:120px;position:relative;margin:0 auto 24px}
+.ring-wrap svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring-num{font-size:30px;font-weight:700;color:var(--ink);line-height:1;font-family:'Roboto Slab',serif}
+.ring-lbl{font-size:10px;color:var(--ink3);font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+
+.res-h{
+  font-family:'Roboto Slab',serif;
+  font-size:26px;font-weight:700;color:var(--ink);margin-bottom:6px;
+}
+.res-s{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:28px}
+.res-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:28px}
+.rchip{
+  width:64px;border-radius:14px;border:1px solid var(--border);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:3px;background:var(--bg);
+}
+.rchip.ok{background:var(--green-bg);border-color:var(--green-b)}
+.rchip.fail{background:var(--red-bg);border-color:var(--red-b)}
+.rchip-c{font-family:'Noto Sans SC',serif;font-size:26px;color:var(--ink)}
+.rchip.ok .rchip-c{color:var(--green)}
+.rchip.fail .rchip-c{color:var(--red)}
+.rchip-l{font-size:8px;color:var(--ink3);text-align:center;font-weight:600;padding:0 4px}
+
+.res-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn-again{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--red);color:#fff;border:none;border-radius:100px;
+  padding:13px 28px;font-family:'Roboto',sans-serif;
+  font-size:14px;font-weight:700;
+  cursor:pointer;box-shadow:0 4px 20px rgba(225,0,30,.22);transition:all .2s;
+}
+.btn-again:hover{background:#c50019;transform:translateY(-2px)}
+.btn-change-level{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--bg);color:var(--ink2);border:1px solid var(--border);border-radius:100px;
+  padding:13px 28px;font-family:'Roboto',sans-serif;
+  font-size:14px;font-weight:500;
+  cursor:pointer;transition:all .2s;
+}
+.btn-change-level:hover{background:var(--card);border-color:var(--ink);color:var(--ink)}
+
+/* confetti */
+.cf-wrap{position:fixed;inset:0;pointer-events:none;z-index:9999;overflow:hidden}
+.cf{position:absolute;width:8px;height:12px;border-radius:2px;animation:cfFall 1.6s ease-in forwards}
+/* set spelling */
+@keyframes cfFall{from{transform:translateY(-30px) rotate(0);opacity:1}to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* ══════════════════════════════
+   RESPONSIVE FIXES — MOBILE + TABLET
+   Keeps level cards, intro, game, and results clean on small screens
+══════════════════════════════ */
+html{scroll-behavior:smooth}
+body{min-width:320px}
+img{max-width:100%;height:auto}
+.cp-logo-icon{max-width:260px;object-fit:contain}
+button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+
+@media (max-width: 900px){
+  .screen.active{justify-content:flex-start;min-height:100dvh}
+  #s-level,#s-intro,#s-results{padding:32px 18px}
+  .level-bg{font-size:min(46vw,300px)}
+  .intro-bg{font-size:min(44vw,280px)}
+  .level-wrap{max-width:680px}
+  .level-cards{gap:12px;margin-bottom:26px}
+  .level-card{padding:20px 22px;gap:16px}
+  .level-h{font-size:clamp(30px,5.2vw,40px)}
+  .level-sub{margin-bottom:30px}
+  .intro-box,.res-box{max-width:620px;padding:42px 34px}
+  .stage{max-width:720px;padding:28px 18px 42px}
+}
+
+@media (max-width: 768px){
+  #s-level,#s-intro,#s-results{padding:28px 16px}
+  .cp-logo{margin-bottom:26px}
+  .cp-logo-icon{max-width:220px;height:auto!important}
+  .level-bg{font-size:min(58vw,240px)}
+  .level-h{font-size:32px}
+  .level-sub{font-size:14px;line-height:1.6;margin-bottom:26px}
+  .level-card{border-radius:18px;padding:18px;align-items:flex-start}
+  .level-badge{width:48px;height:48px;font-size:25px;border-radius:13px}
+  .level-name{font-size:16px}
+  .level-desc{font-size:12.5px;line-height:1.45}
+  .level-pill{font-size:9px;padding:4px 10px;margin-top:4px}
+  .level-footer{line-height:1.5}
+
+  .intro-box,.res-box{border-radius:24px;padding:36px 26px}
+  .intro-h{font-size:32px}
+  .intro-p{font-size:14px;margin-bottom:24px}
+  .intro-chars{gap:7px}
+  .ic{padding:10px 12px;border-radius:12px}
+  .ic-c{font-size:27px}
+
+  .tb{padding:12px 16px;gap:10px;flex-wrap:wrap}
+  .tb-logo{width:100%;justify-content:space-between}
+  .tb-logo .cp-logo-icon{width:130px!important;max-width:130px}
+  .tb-level-pill{font-size:8.5px;padding:4px 9px}
+  .tb-bar-wrap{order:3;width:100%;flex-basis:100%}
+  .tb-cnt{order:2;font-size:12px;margin-left:auto}
+
+  .stage{padding:22px 14px 36px;gap:18px}
+  .q-card{padding:28px 22px;border-radius:22px;gap:16px}
+  /* .char-stage{width:135px;height:135px} */
+  .the-char{font-size:82px}
+  .q-text{font-size:16px}
+  .opt{padding:14px 16px;gap:12px;border-radius:14px}
+  .opt-label{font-size:15px}
+  .opt-num{width:31px;height:31px}
+  .correct-banner{padding:17px 18px;align-items:flex-start}
+  .cb-char-reveal{margin-left:0}
+  .cmp-section{padding:22px 18px 18px}
+  .guide-body{padding:20px 18px}
+  .cmp-big-char{font-size:48px}
+  .cmp-card{min-width:96px;padding:15px 8px}
+}
+
+@media (max-width: 560px){
+  #s-level,#s-intro,#s-results{padding:22px 12px}
+  .level-wrap{max-width:100%}
+  .cp-logo{margin-bottom:20px}
+  .cp-logo-icon{max-width:190px}
+  .level-eyebrow{font-size:10px;margin-bottom:10px}
+  .level-h{font-size:28px;margin-bottom:10px}
+  .level-sub{font-size:13.5px;line-height:1.55;margin-bottom:22px}
+  .level-sub br{display:none}
+  .level-cards{gap:10px;margin-bottom:22px}
+  .level-card{display:grid;grid-template-columns:44px 1fr;grid-template-areas:"badge info" "pill pill";gap:12px;padding:16px;border-radius:17px;transform:none!important}
+  .level-card:hover{transform:none!important}
+  .level-badge{grid-area:badge;width:44px;height:44px;font-size:23px;border-radius:12px}
+  .level-info{grid-area:info;min-width:0}
+  .level-pill{grid-area:pill;justify-self:start;margin:0;font-size:9px;padding:5px 11px}
+  .level-name{font-size:15.5px;margin-bottom:4px}
+  .level-desc{font-size:12px;line-height:1.45}
+  .level-footer{font-size:11.5px;padding-bottom:6px}
+  .level-bg{font-size:70vw}
+
+  .intro-box,.res-box{padding:28px 18px;border-radius:22px}
+  .intro-pill{font-size:10px;padding:5px 13px;margin-bottom:18px}
+  .intro-h{font-size:28px}
+  .intro-h br{display:none}
+  .intro-p{font-size:13.5px;line-height:1.6}
+  .intro-p br{display:none}
+  .btn-start,.btn-again,.btn-change-level{width:100%;justify-content:center}
+  .ic{padding:9px 10px;min-width:50px}
+  .ic-c{font-size:25px}
+
+  .tb{padding:10px 12px}
+  .tb-logo .cp-logo-icon{width:112px!important;max-width:112px}
+  .stage{padding:18px 10px 32px;gap:15px}
+  .q-card{padding:22px 16px;border-radius:20px}
+  /* .char-stage{width:118px;height:118px} */
+  .char-grid-lines{border-radius:15px}
+  .the-char{font-size:70px}
+  .q-text{font-size:15px;line-height:1.45}
+  .q-speaking,.hint-pill{font-size:11px;padding:6px 12px}
+  .opts{gap:8px}
+  .opt{padding:13px 14px;border-radius:13px}
+  .opt:hover:not(:disabled){transform:none}
+  .opt-label{font-size:14px}
+  .opt-pinyin{font-size:11px}
+  .opt-num{width:29px;height:29px;border-radius:9px;font-size:11px}
+  .correct-banner{display:grid;grid-template-columns:38px 1fr;gap:12px;padding:15px;border-radius:16px}
+  .cb-icon{width:38px;height:38px}
+  .cb-char-reveal{grid-column:1 / -1;justify-content:center;background:#fff;border:1px solid var(--green-b);border-radius:13px;padding:10px}
+  .cb-char{font-size:36px}
+  .guide{border-radius:20px}
+  .cmp-section{padding:18px 14px 14px}
+  .cmp-row{display:grid;grid-template-columns:1fr;gap:8px}
+  .cmp-card{min-width:0;width:100%;padding:14px 10px}
+  .cmp-arrow{transform:rotate(90deg);padding:2px 0}
+  .guide-body{padding:17px 14px;gap:12px}
+  .g-why,.g-story,.g-tip{padding:12px 13px}
+  .g-why p,.g-story p,.g-tip p{font-size:12.5px;line-height:1.65}
+  .g-voice{width:100%;justify-content:center;border-radius:13px}
+
+  .ring-wrap{width:108px;height:108px;margin-bottom:20px}
+  .res-h{font-size:23px}
+  .res-s{font-size:13.5px;margin-bottom:22px}
+  .res-chips{gap:7px;margin-bottom:24px}
+  .rchip{width:56px;border-radius:13px}
+  .rchip-c{font-size:24px}
+}
+
+@media (max-width: 380px){
+  .level-card{padding:14px;grid-template-columns:40px 1fr}
+  .level-badge{width:40px;height:40px;font-size:21px}
+  .level-h{font-size:25px}
+  .level-sub{font-size:13px}
+  .intro-box,.res-box{padding:24px 14px}
+  /* .char-stage{width:106px;height:106px} */
+  .the-char{font-size:64px}
+  .q-card{padding:18px 12px}
+  .opt{padding:12px;gap:10px}
+  .tb-logo .cp-logo-icon{width:100px!important;max-width:100px}
+}
+
+
+/* ══════════════════════════════
+   UI/UX APPROVED POLISH — PORTRAIT MOBILE + TABLET
+══════════════════════════════ */
+:root{
+  --content-max:760px;
+  --tap:48px;
+}
+body{padding-bottom:env(safe-area-inset-bottom)}
+button,.level-card{min-height:var(--tap)}
+button:focus-visible,.level-card:focus-visible{
+  outline:3px solid rgba(225,1,31,.22);
+  outline-offset:3px;
+}
+.level-card{position:relative;overflow:hidden}
+.level-card::after{
+  content:'›';font-size:27px;line-height:1;color:var(--ink3);
+  flex:0 0 auto;transition:transform .2s,color .2s;
+}
+.level-card:hover::after,.level-card:focus-visible::after{transform:translateX(3px);color:var(--red)}
+.lesson-meta{display:flex;flex-wrap:wrap;gap:4px 7px;align-items:center}
+.lesson-level{display:inline-flex;align-items:center;padding:2px 8px;border-radius:999px;background:var(--bg)}
+.intro-lesson{max-width:430px}
+.tb-level-pill{max-width:min(48vw,430px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.stage{margin-inline:auto}
+.opt{min-height:58px}
+.btn-start,.btn-next,.btn-play-again,.btn-again,.btn-change-level{min-height:50px}
+
+/* Portrait tablets: use the available width without making reading lines too long. */
+@media (min-width: 600px) and (max-width: 900px) and (orientation: portrait){
+  #s-level,#s-intro,#s-results{padding:clamp(34px,6vh,64px) 28px}
+  .level-wrap{max-width:720px}
+  .cp-logo{margin-bottom:30px}
+  .level-h{font-size:40px}
+  .level-sub{max-width:590px;margin:0 auto 32px;font-size:15px}
+  .level-cards{display:grid;grid-template-columns:1fr;gap:15px}
+  .level-card{padding:24px 26px;border-radius:22px;gap:18px}
+  .level-badge{width:58px;height:58px;font-size:30px}
+  .level-name{font-size:18px}
+  .lesson-meta{font-size:13px}
+  .level-desc{font-size:14px;line-height:1.55}
+  .intro-box,.res-box{max-width:680px;padding:46px 44px}
+  .intro-chars{display:grid;grid-template-columns:repeat(5,minmax(72px,1fr));max-width:540px;margin-inline:auto}
+  .ic{min-height:86px;justify-content:center}
+  .tb{padding:14px 22px}
+  .tb-logo .cp-logo-icon{width:145px!important;max-width:145px}
+  .tb-level-pill{max-width:52vw;font-size:9px}
+  .stage{max-width:760px;padding:30px 24px 52px}
+  .q-card{padding:38px 34px}
+  .opts{gap:12px}
+  .opt{padding:17px 20px}
+  .cmp-row{display:grid;grid-template-columns:1fr 42px 1fr;align-items:stretch}
+  .cmp-card{min-width:0}
+}
+
+/* Mobile portrait: stronger hierarchy, edge-to-edge efficiency, comfortable tapping. */
+@media (max-width: 599px) and (orientation: portrait){
+  #s-level,#s-intro,#s-results{
+    padding:max(18px,env(safe-area-inset-top)) 12px max(22px,env(safe-area-inset-bottom));
+  }
+  .screen.active{min-height:100svh}
+  .cp-logo-icon{max-width:172px}
+  .level-h{font-size:clamp(26px,8vw,32px)}
+  .level-sub{max-width:34ch;margin-inline:auto}
+  .level-card{
+    grid-template-columns:46px minmax(0,1fr) 22px;
+    grid-template-areas:'badge info arrow' 'pill pill arrow';
+    column-gap:12px;row-gap:10px;padding:16px 14px;
+  }
+  .level-card::after{grid-area:arrow;align-self:center;justify-self:end}
+  .lesson-meta{font-size:11.5px;margin-bottom:7px}
+  .lesson-level{padding:2px 7px}
+  .level-pill{min-height:26px;display:inline-flex;align-items:center}
+  .intro-box,.res-box{width:100%;padding:26px 16px;border-radius:20px}
+  .intro-lesson{padding:11px 12px;text-align:left;font-size:12.5px}
+  .intro-chars{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;width:100%}
+  .ic{min-width:0;padding:9px 4px}
+  .ic-c{font-size:24px}
+  .ic-m{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .btn-start{width:100%;justify-content:center;border-radius:14px}
+  .tb{padding:10px 11px max(10px,env(safe-area-inset-top));gap:8px}
+  .tb-logo{min-width:0}
+  .tb-logo .cp-logo-icon{width:105px!important;max-width:105px}
+  .tb-level-pill{max-width:calc(100vw - 145px);font-size:8px;padding:4px 7px}
+  .tb-cnt{font-size:11px}
+  .stage{width:100%;padding:16px 10px calc(30px + env(safe-area-inset-bottom));gap:14px}
+  .q-card{padding:20px 14px;gap:14px;border-radius:18px}
+  /* .char-stage{width:110px;height:110px} */
+  .the-char{font-size:67px}
+  .q-text{font-size:15px;max-width:30ch}
+  .opts{gap:8px}
+  .opt{min-height:56px;padding:12px;gap:10px}
+  .opt-label{font-size:14px;line-height:1.35}
+  .btn-row{position:sticky;bottom:0;z-index:20;background:linear-gradient(to top,var(--bg) 72%,rgba(248,247,245,0));padding:12px 0 max(6px,env(safe-area-inset-bottom));margin-top:-4px}
+  .btn-next,.btn-play-again{border-radius:13px}
+  .correct-banner{width:100%}
+  .cmp-row{display:grid;grid-template-columns:1fr;gap:8px}
+  .cmp-arrow{transform:rotate(90deg)}
+  .res-chips{display:grid;grid-template-columns:repeat(2,1fr);width:100%}
+  .rchip{width:100%;min-width:0}
+  .res-btns{display:grid;grid-template-columns:1fr;width:100%}
+}
+
+/* Very narrow phones: retain readable labels and avoid horizontal pressure. */
+@media (max-width: 390px){
+  .level-card{grid-template-columns:42px minmax(0,1fr) 18px;padding:14px 12px}
+  .level-name{font-size:15px}
+  .lesson-meta{font-size:11px}
+  .intro-chars{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .ic-c{font-size:22px}
+  .tb-level-pill{max-width:calc(100vw - 132px)}
+  .btn-row{gap:8px}
+  .btn-next,.btn-play-again{font-size:13px;padding:14px 10px}
+}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+}
+
+/* ══════════════════════════════
+   GAME HEADER — MODERN QUIZ NAV
+══════════════════════════════ */
+.tb{
+  width:100%;padding:0;background:rgba(255,255,255,.94);
+  border-bottom:1px solid rgba(26,25,23,.08);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  box-shadow:0 8px 30px rgba(26,25,23,.035);
+}
+.tb-inner{
+  width:100%;margin:0 auto;padding:14px 22px 12px;
+  display:grid;grid-template-columns:minmax(0,1fr) auto;
+  grid-template-areas:"lesson count" "progress progress";
+  align-items:center;gap:12px 18px;
+}
+.tb-lesson{grid-area:lesson;min-width:0;display:flex;align-items:center;gap:12px}
+.tb-mark{
+  width:38px;height:38px;border-radius:12px;flex:0 0 auto;
+  display:grid;place-items:center;background:var(--red);color:#fff;
+  font-family:'Noto Sans SC',sans-serif;font-size:20px;font-weight:700;
+  box-shadow:0 6px 16px rgba(225,1,31,.2);
+}
+.tb-lesson-copy{min-width:0;display:flex;flex-direction:column;gap:3px}
+.tb-meta{
+  display:flex;align-items:center;gap:7px;min-width:0;
+  font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink3);line-height:1;
+}
+.tb-lesson-number{color:var(--red);white-space:nowrap}
+.tb-meta-sep{width:3px;height:3px;border-radius:50%;background:var(--border);flex:0 0 auto}
+.tb-level-pill{
+  min-width:0;max-width:100%;padding:0;background:none;color:var(--ink2);
+  font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.tb-lesson-title{
+  min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  font-size:15px;font-weight:700;color:var(--ink);line-height:1.25;
+  letter-spacing:-.01em;
+}
+.tb-cnt{
+  grid-area:count;display:flex;align-items:baseline;justify-content:center;gap:3px;
+  min-width:68px;padding:8px 11px;border-radius:12px;
+  background:var(--bg);border:1px solid var(--border);
+  font-size:12px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;
+}
+.tb-bar-wrap{grid-area:progress;width:100%;display:flex;flex-direction:column;gap:7px}
+.tb-track{height:5px;background:#ECEAE6;border-radius:999px;overflow:hidden}
+.tb-fill{height:100%;background:var(--red);border-radius:999px;transition:width .6s cubic-bezier(.4,0,.2,1)}
+
+@media (max-width:768px){
+  .tb-inner{padding:11px 14px 10px;gap:10px 12px}
+  .tb-mark{width:34px;height:34px;border-radius:10px;font-size:18px}
+  .tb-lesson{gap:10px}
+  .tb-lesson-title{font-size:14px}
+  .tb-meta,.tb-level-pill{font-size:9px;letter-spacing:.075em}
+  .tb-cnt{min-width:58px;padding:7px 9px;border-radius:10px;font-size:11px}
+  .tb-track{height:4px}
+}
+
+@media (max-width:390px){
+  .tb-inner{padding:10px 11px 9px;gap:9px 9px}
+  .tb-mark{width:32px;height:32px;border-radius:9px;font-size:17px}
+  .tb-lesson{gap:8px}
+  .tb-lesson-title{font-size:13px}
+  .tb-meta,.tb-level-pill{font-size:8.5px}
+  .tb-cnt{min-width:52px;padding:6px 7px}
+}
+
+
+/* ══════════════════════════════
+   GAME HEADER — PREMIUM RESPONSIVE REDESIGN
+══════════════════════════════ */
+.tb{
+  background:rgba(255,255,255,.97);
+  border-bottom:1px solid rgba(26,25,23,.08);
+  box-shadow:0 10px 34px rgba(26,25,23,.05);
+}
+.tb-inner{
+  /* max-width:1040px; */
+  padding:15px 24px 13px;
+  grid-template-columns:minmax(0,1fr) auto;
+  grid-template-areas:"lesson count" "progress progress";
+  gap:13px 22px;
+}
+.tb-lesson{gap:14px;min-width:0}
+.tb-brand{
+  width:132px;height:38px;flex:0 0 132px;
+  display:flex;align-items:center;
+}
+.tb-brand img{display:block;width:100%;height:auto;max-height:38px;object-fit:contain;object-position:left center}
+.tb-divider{width:1px;height:34px;background:var(--border);flex:0 0 1px}
+.tb-lesson-copy{gap:4px;min-width:0}
+.tb-meta{gap:8px;line-height:1.1}
+.tb-lesson-number{
+  color:var(--red);font-size:10px;font-weight:800;letter-spacing:.095em;
+}
+.tb-level-pill{
+  width:max-content;max-width:180px;padding:4px 8px;border-radius:999px;
+  background:var(--red-bg);border:1px solid var(--red-b);color:var(--red);
+  font-size:9px;line-height:1;letter-spacing:.075em;
+}
+.tb-lesson-title{
+  font-size:15px;line-height:1.25;font-weight:700;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.tb-cnt{
+  grid-area:count;min-width:114px;padding:8px 11px 8px 12px;
+  display:grid;grid-template-columns:auto auto;grid-template-areas:"label label" "current total";
+  align-items:end;justify-content:center;column-gap:5px;row-gap:1px;
+  background:#fff;border:1px solid var(--border);border-radius:14px;
+  box-shadow:0 4px 14px rgba(26,25,23,.05);
+  font-variant-numeric:tabular-nums;
+}
+.tb-cnt-label{grid-area:label;font-size:8px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--ink3);line-height:1}
+.tb-cnt-current{grid-area:current;font-size:22px;font-weight:800;line-height:.95;color:var(--red);letter-spacing:-.04em}
+.tb-cnt-total{grid-area:total;font-size:11px;font-weight:700;line-height:1.1;color:var(--ink2);padding-bottom:1px;white-space:nowrap}
+.tb-bar-wrap{gap:6px}
+.tb-progress-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:9px;font-weight:700;color:var(--ink3);letter-spacing:.025em}
+.tb-progress-meta span:first-child{color:var(--red)}
+.tb-track{
+  position:relative;height:7px;background:#ECEAE7;border-radius:999px;overflow:hidden;
+  box-shadow:inset 0 1px 2px rgba(26,25,23,.06);
+}
+.tb-fill{
+  position:relative;height:100%;border-radius:999px;
+  background:linear-gradient(90deg,#E1011F 0%,#F13A4F 100%);
+  box-shadow:0 2px 8px rgba(225,1,31,.26);
+}
+.tb-live-stats{display:flex;align-items:center;justify-content:flex-end;gap:10px;min-width:0}
+.tb-stat{display:inline-flex;align-items:center;gap:4px;white-space:nowrap;font-size:9px;font-weight:800}
+.tb-stat i{width:7px;height:7px;border-radius:50%;display:block;box-shadow:0 0 0 2px #fff}
+.tb-stat-correct{color:var(--green)}
+.tb-stat-correct i{background:var(--green)}
+.tb-stat-wrong{color:var(--red)}
+.tb-stat-wrong i{background:var(--red)}
+.tb-progress-step{color:var(--ink3);font-weight:700}
+
+
+@media (max-width:700px){
+  .tb-inner{
+    padding:11px 13px 10px;
+    grid-template-columns:minmax(0,1fr) auto;
+    gap:10px 10px;
+  }
+  .tb-lesson{gap:9px}
+  .tb-brand{width:102px;height:30px;flex-basis:102px}
+  .tb-brand img{max-height:30px}
+  .tb-divider{height:29px}
+  .tb-lesson-copy{gap:3px}
+  .tb-lesson-title{font-size:13px;line-height:1.2}
+  .tb-lesson-number{font-size:8.5px}
+  .tb-level-pill{font-size:8px;padding:3px 6px;max-width:112px}
+  .tb-cnt{min-width:74px;padding:7px 8px;border-radius:12px;column-gap:3px}
+  .tb-cnt-label{font-size:7px;letter-spacing:.1em}
+  .tb-cnt-current{font-size:19px}
+  .tb-cnt-total{font-size:9px}
+  .tb-progress-meta{font-size:8px}
+  .tb-live-stats{gap:7px}
+  .tb-stat{font-size:8px}
+  .tb-stat i{width:6px;height:6px}
+  .tb-track{height:6px}
+}
+
+@media (max-width:430px){
+  .tb-inner{
+    grid-template-columns:minmax(0,1fr) 66px;
+    padding:10px 10px 9px;gap:9px 8px;
+  }
+  .tb-lesson{gap:7px}
+  .tb-brand{width:88px;height:27px;flex-basis:88px}
+  .tb-brand img{max-height:27px}
+  .tb-divider{height:26px}
+  .tb-lesson-title{font-size:12px}
+  .tb-meta{gap:5px}
+  .tb-lesson-number{font-size:7.8px}
+  .tb-level-pill{max-width:84px;font-size:7.2px;padding:3px 5px}
+  .tb-cnt{min-width:66px;padding:6px 6px;border-radius:11px}
+  .tb-cnt-current{font-size:17px}
+  .tb-cnt-total{font-size:8px}
+  .tb-progress-step{display:none}
+  .tb-live-stats{gap:8px}
+  .tb-stat{font-size:7.5px}
+  .tb-track{height:5px}
+}
+
+@media (max-width:350px){
+  .tb-brand{width:76px;flex-basis:76px}
+  .tb-divider{display:none}
+  .tb-lesson{gap:6px}
+  .tb-level-pill{max-width:70px}
+}
+
+
+/* ══ CLIENT REVISION: flat ChinesePod quiz module ══ */
+:root{
+  --red:#E1001E;--red-bg:#FFF4F5;--red-b:#E1001E;
+  --black:#000;--white:#fff;--accent:#FEFFAF;
+  --bg:#fff;--card:#fff;--border:#D9D9D9;
+  --ink:#111;--ink2:#555;--ink3:#777;
+  --shadow:none;--shadow-lg:none;--radius:10px;
+}
+html,body{background:#fff;overflow:hidden}
+.level-bg,.intro-bg,.cf-wrap{display:none!important}
+#s-level{display:none!important}
+.screen{min-height:100vh;background:#fff}
+#s-intro,#s-results{padding:24px}
+.intro-box,.res-box,.q-card,.guide,.correct-banner,.opt,.cmp-card{
+  box-shadow:none!important;filter:none!important;background-image:none!important;
+}
+.intro-box,.res-box{max-width:760px;border:1px solid var(--border);border-radius:10px;padding:30px 34px}
+.cp-logo,.tb-brand{filter:none}
+.intro-pill,.tb-level-pill{border-radius:4px;background:var(--accent);border:1px solid #D9DA75;color:#111}
+.intro-h,.res-h{font-family:'Roboto Slab',serif}
+.intro-chars{margin-bottom:20px;gap:6px}
+.ic{border-radius:6px;padding:8px 10px;background:#fff;box-shadow:none!important}
+.ic:hover{transform:none;box-shadow:none!important;background:var(--accent)}
+.btn-start,.btn-again,.btn-next{border-radius:5px;box-shadow:none!important;background:var(--red)}
+.btn-start:hover,.btn-again:hover,.btn-next:hover{transform:none;box-shadow:none!important;background:#BF0019}
+.btn-back-level,.btn-change-level{display:none!important}
+#s-game.active{height:100vh;overflow:hidden;display:flex}
+.tb{position:relative;padding:8px 18px;box-shadow:none!important;border-bottom:1px solid var(--border);flex:0 0 auto}
+/* .tb-inner{max-width:1180px} */
+.stage{max-width:1000px;padding:14px 20px 12px;gap:10px;overflow:hidden}
+.q-card{border-radius:8px;padding:16px 22px;gap:12px;min-height:170px;justify-content:center}
+/* .char-stage{width:124px;height:124px} */
+.char-grid-lines{border-radius:4px;border-width:1px}
+.the-char{font-size:76px}
+.q-text{font-size:17px;max-width:600px;text-align:left}
+.q-speaking{border-radius:4px;background:#fff;border:1px solid var(--border);color:#111}
+.hint-pill{border-radius:4px;background:var(--accent);border:1px solid #D9DA75;color:#111}
+.opts{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px!important}
+.option-field{position:relative}
+.btn-check+.opt{height:100%;min-height:58px;border:1px solid var(--border);border-radius:6px;padding:10px 12px;margin:0;background:#fff}
+.btn-check:focus+.opt,.btn-check+.opt:hover{border-color:var(--red);background:#fff;transform:none;box-shadow:0 0 0 2px rgba(225,0,30,.08)!important}
+.btn-check:checked+.opt{border-color:var(--red)}
+.opt-num{border-radius:3px;background:#fff;border:1px solid var(--border)}
+.opt.s-correct,.opt.s-reveal{background:#F4FBF6;border:1px solid #1A7A3C;animation:none}
+.opt.s-wrong{background:#FFF4F5;border:1px solid var(--red);animation:none}
+.feedback-tabs{width:100%;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.feedback-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 14px;border-bottom:1px solid var(--border)}
+.feedback-status{font-size:14px;font-weight:700}
+.feedback-status.ok{color:#1A7A3C}.feedback-status.bad{color:var(--red)}
+.feedback-tabs .nav-tabs{border:0;gap:2px;flex-wrap:nowrap}
+.feedback-tabs .nav-link{border:0!important;border-radius:3px!important;color:#333;font-size:12px;font-weight:700;padding:6px 11px}
+.feedback-tabs .nav-link.active{color:var(--red);border:1px solid var(--red) !important}
+.feedback-tabs .tab-content{padding:12px 15px;height: fit-content;overflow:auto}
+.feedback-tabs p{font-size:13px;line-height:1.55;margin:0;color:#333}
+.feedback-meaning{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(220px,1fr);gap:14px;align-items:center}
+.feedback-answer{border-left:3px solid var(--red);padding-left:12px}
+.feedback-answer.ok{border-left-color:#1A7A3C}
+.feedback-char{font-family:'Noto Sans SC',sans-serif;font-size:42px;line-height:1}
+.feedback-pinyin{font-weight:700;color:var(--red)}
+.feedback-mini-compare{display:flex;gap:6px;justify-content:flex-end}
+.feedback-mini-card{min-width:78px;border:1px solid var(--border);border-radius:5px;padding:7px;text-align:center}
+.feedback-mini-card strong{font-family:'Noto Sans SC',sans-serif;font-size:25px;display:block}
+.btn-row{gap:8px;margin-top:0}
+.btn-play-again,.btn-next{border-radius:5px;box-shadow:none!important;padding:10px 18px}
+.btn-play-again{background:#fff;border:1px solid var(--border);color:#111}
+#s-results .res-chips{margin:15px 0;gap:6px}
+.rchip{border-radius:5px;box-shadow:none!important}
+.ring-wrap{width:112px;height:112px}
+@media (max-width:800px){
+  html,body{overflow:auto}.screen{min-height:100dvh}
+  #s-game.active{height:auto;overflow:visible}.stage{overflow:visible}
+  .q-card{flex-direction:column}.opts{grid-template-columns:1fr!important}
+  .feedback-meaning{grid-template-columns:1fr}.feedback-mini-compare{justify-content:flex-start}
+}
+
+
+/* ══ FIXED QUIZ SHELL: header top, actions bottom, scrollable middle ══ */
+#s-game.active{
+  height:100dvh!important;
+  min-height:100dvh!important;
+  overflow:hidden!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  justify-content:flex-start!important;
+}
+#s-game .tb{
+  position:relative!important;
+  top:auto!important;
+  flex:0 0 auto!important;
+  z-index:40!important;
+}
+.game-scroll{
+  flex:1 1 auto;
+  min-height:0;
+  overflow-y:auto;
+  overflow-x:hidden;
+  overscroll-behavior:contain;
+  scrollbar-gutter:stable;
+  -webkit-overflow-scrolling:touch;
+}
+.game-scroll .stage{
+  min-height:100%;
+  margin-inline:auto;
+  overflow:visible!important;
+  padding-bottom:18px;
+}
+.game-actions{
+  flex:0 0 auto;
+  min-height:62px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:9px 20px calc(9px + env(safe-area-inset-bottom));
+  background:#fff;
+  border-top:1px solid var(--border);
+  z-index:40;
+}
+.game-actions:empty{display:none}
+.game-actions .btn-row{
+  width:100%;
+  max-width:1000px;
+  margin:0!important;
+  padding:0!important;
+  position:static!important;
+  background:none!important;
+  display:flex;
+  justify-content:flex-end;
+}
+@media (max-width:800px){
+  html,body{overflow:hidden!important}
+  #s-game.active{height:100dvh!important;overflow:hidden!important}
+  .game-scroll{overflow-y:auto!important}
+  .game-scroll .stage{padding:14px 12px 18px}
+  .game-actions{padding:8px 12px calc(8px + env(safe-area-inset-bottom))}
+  .game-actions .btn-row{flex-direction:row!important}
+  .game-actions .btn-next,.game-actions .btn-play-again{width:auto!important;flex:1 1 0}
+}
+
+
+/* ══ WEBVIEW SINGLE-LINE HEADER + FLAT PROGRESS BAR ══ */
+@media (min-width:769px){
+  .tb-inner{
+    /* max-width:1180px; */
+    padding:10px 22px;
+    display:grid;
+    grid-template-columns:minmax(360px,1.45fr) minmax(260px,1fr) auto;
+    grid-template-areas:"lesson progress count";
+    align-items:center;
+    gap:18px;
+  }
+  .tb-lesson{grid-area:lesson;min-width:0}
+  .tb-bar-wrap{grid-area:progress;min-width:0;gap:5px}
+  .tb-cnt{grid-area:count;min-width:104px}
+  .tb-brand{width:112px;height:32px;flex-basis:112px}
+  .tb-brand img{max-height:32px}
+  .tb-divider{height:30px}
+  .tb-lesson-title{font-size:14px}
+  .tb-progress-meta{font-size:8.5px}
+  .tb-live-stats{gap:8px}
+}
+.tb-track{
+  box-shadow:none!important;
+}
+.tb-fill{
+  background:var(--red)!important;
+  box-shadow:none!important;
+}
+.tb-fill::after{
+  content:none!important;
+  display:none!important;
+  animation:none!important;
+}
+
+</style>
+</head>
+<body>
+<div id="s-level" class="screen active">
+  <div class="level-bg" id="levelBg">学</div>
+  <div class="level-wrap">
+    <div class="cp-logo">
+      <!-- ChinesePod pictogram SVG (simplified) -->
+       <img class="cp-logo-icon" src="https://s3.amazonaws.com/assets.chinesepod/images/logo.chinesepod.svg" alt="">
+      <!-- <svg class="cp-logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="18" cy="7" r="4.5" fill="#E1001E"/>
+        <path d="M18 13 L10 26 L26 26 Z" fill="#000000"/>
+        <path d="M10 18 L4 28" stroke="#E1001E" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M26 18 L32 28" stroke="#000000" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <span class="cp-logo-text">ChinesePod</span> -->
+    </div>
+    <div class="level-eyebrow">Character Quiz</div>
+    <h1 class="level-h">Choose a lesson quiz</h1>
+    <p class="level-sub">Each quiz is identified by its ChinesePod lesson and level.<br>Voice-guided with instant feedback. Questions appear in random order every time.</p>
+
+    <div class="level-cards">
+      <div class="level-card lv-newbie" role="button" tabindex="0" aria-label="Open Newbie lesson quiz" onclick="selectLevel('newbie')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectLevel('newbie')}">
+        <div class="level-badge">新</div>
+        <div class="level-info">
+          <div class="level-name" id="cardTitle-newbie">Lesson title pending</div>
+          <div class="lesson-meta" id="cardMeta-newbie">ChinesePod Lesson # pending <span class="lesson-level">· Level: Newbie</span></div>
+          <div class="level-desc">Character quiz attached to this ChinesePod lesson.</div>
+        </div>
+        <div class="level-pill">Open Quiz</div>
+      </div>
+      <div class="level-card lv-preint" role="button" tabindex="0" aria-label="Open Pre-Intermediate lesson quiz" onclick="selectLevel('preint')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectLevel('preint')}">
+        <div class="level-badge">中</div>
+        <div class="level-info">
+          <div class="level-name" id="cardTitle-preint">Lesson title pending</div>
+          <div class="lesson-meta" id="cardMeta-preint">ChinesePod Lesson # pending <span class="lesson-level">· Level: Pre-Intermediate</span></div>
+          <div class="level-desc">Character quiz attached to this ChinesePod lesson.</div>
+        </div>
+        <div class="level-pill">Open Quiz</div>
+      </div>
+      <div class="level-card lv-upper" role="button" tabindex="0" aria-label="Open Upper Intermediate lesson quiz" onclick="selectLevel('upper')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectLevel('upper')}">
+        <div class="level-badge">高</div>
+        <div class="level-info">
+          <div class="level-name" id="cardTitle-upper">Lesson title pending</div>
+          <div class="lesson-meta" id="cardMeta-upper">ChinesePod Lesson # pending <span class="lesson-level">· Level: Upper Intermediate</span></div>
+          <div class="level-desc">Character quiz attached to this ChinesePod lesson.</div>
+        </div>
+        <div class="level-pill">Open Quiz</div>
+      </div>
+    </div>
+    <div class="level-footer">10 questions per lesson · Natural voice audio included</div>
+  </div>
+</div>
+
+<!-- ══ INTRO ══ -->
+<div id="s-intro" class="screen">
+  <div class="intro-bg" id="introBg">学</div>
+  <div class="intro-box">
+    <div class="intro-pill"><div class="intro-pill-dot"></div><span id="introPillText">ChinesePod · Newbie</span></div>
+    <h1 class="intro-h">Learn <span>10</span> Chinese<br>Characters</h1>
+    <p class="intro-p">Voice-guided quiz with instant feedback.<br>Questions are shuffled every time you start.</p>
+    <div class="intro-lesson" id="introLessonMeta"></div>
+    <div class="intro-chars" id="introChars"></div>
+    <div class="intro-btns">
+      <button class="btn-start" onclick="startGame()">
+        Start Quiz
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+      <button class="btn-back-level" onclick="show('s-level')">← Change lesson</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ GAME ══ -->
+<div id="s-game" class="screen">
+  <div class="tb">
+    <div class="tb-inner">
+      <div class="tb-lesson" aria-label="Current lesson">
+        <div class="tb-brand" aria-label="ChinesePod">
+          <img src="https://s3.amazonaws.com/assets.chinesepod/images/logo.chinesepod.svg" alt="ChinesePod">
+        </div>
+        <div class="tb-divider" aria-hidden="true"></div>
+        <div class="tb-lesson-copy">
+          <div class="tb-meta">
+            <span class="tb-lesson-number" id="tbLessonNumber">Lesson 197</span>
+            <span class="tb-level-pill" id="tbLevelPill">Newbie</span>
+          </div>
+          <div class="tb-lesson-title" id="tbLessonTitle">What Does This Word Mean?</div>
+        </div>
+      </div>
+      <div class="tb-cnt" id="tbCnt" aria-label="Question progress">
+        <span class="tb-cnt-label">Question</span>
+        <span class="tb-cnt-current" id="tbCntCurrent">01</span>
+        <span class="tb-cnt-total" id="tbCntTotal">/ 10</span>
+      </div>
+      <div class="tb-bar-wrap">
+        <div class="tb-progress-meta">
+          <span id="tbProgressText">0% complete</span>
+          <div class="tb-live-stats" aria-label="Answer totals">
+            <span class="tb-stat tb-stat-correct"><i></i><b id="tbCorrectCount">0</b> correct</span>
+            <span class="tb-stat tb-stat-wrong"><i></i><b id="tbWrongCount">0</b> wrong</span>
+            <span class="tb-progress-step" id="tbProgressStep">0 of 10 answered</span>
+          </div>
+        </div>
+        <div class="tb-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div class="tb-fill" id="tbFill" style="width:0%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="game-scroll" id="gameScroll">
+    <div class="stage" id="stage"></div>
+  </div>
+  <div class="game-actions" id="gameActions" aria-live="polite"></div>
+</div>
+
+<!-- ══ RESULTS ══ -->
+<div id="s-results" class="screen">
+  <div class="res-box">
+    <div class="ring-wrap">
+      <svg viewBox="0 0 120 120">
+        <circle cx="60" cy="60" r="50" fill="none" stroke="#E2E0DC" stroke-width="10"/>
+        <circle cx="60" cy="60" r="50" fill="none" stroke="#E1001E" stroke-width="10"
+          stroke-dasharray="314.2" stroke-dashoffset="314.2" id="scoreRing" stroke-linecap="round"/>
+      </svg>
+      <div class="ring-center">
+        <div class="ring-num" id="scoreNum">0/10</div>
+        <div class="ring-lbl">Score</div>
+      </div>
+    </div>
+    <div class="res-h" id="resH">Well done!</div>
+    <div class="res-s" id="resS"></div>
+    <div class="res-chips" id="resChips"></div>
+    <div class="res-btns">
+      <button class="btn-again" onclick="restartGame()">
+        Try Again
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 4v6h6M23 20v-6h-6"/><path d="M20.49 9A9 9 0 005.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 013.51 15"/></svg>
+      </button>
+      <button class="btn-change-level" onclick="show('s-level')">Change Lesson</button>
+    </div>
+  </div>
+</div>
+
+<div class="cf-wrap" id="cfWrap"></div>
+
+<script>
+/* ══════════════════════════════════════════════
+   QUIZ DATA — 3 LEVELS, 8 QUESTIONS EACH
+   KEY FIX: options array is ENGLISH ONLY (no characters).
+   Characters are ONLY shown in the main char-stage display
+   and in the comparison panel AFTER answering.
+══════════════════════════════════════════════ */
+
+const FIXED_LEVEL = 'preint';
+const LEVELS = {
+
+/* ─────────── NEWBIE ─────────── */
+newbie: {
+  lessonNumber: '1979',
+  lessonTitle: 'What Does This Word Mean?',
+  label: 'Newbie',
+  pillLabel: 'ChinesePod · Lesson #1979',
+  data: [
+    {
+      char:'老师', type:'word', pinyin:'lǎoshī', meaning:'teacher', audioKey:'01',
+      intro:'This is a common and respectful word for someone who teaches. Can you identify it?',
+      question:'What does the word 老师 mean?',
+      options:['teacher','student','doctor'],
+      related:[{char:'老师',py:'lǎoshī',en:'teacher'},{char:'学生',py:'xuésheng',en:'student'},{char:'医生',py:'yīshēng',en:'doctor'}],
+      correctSpeech:'Excellent! 老师, pronounced lǎoshī, means teacher. It can describe a teacher and is also commonly used as a respectful form of address.',
+      wrongGuide:'That\'s not quite right. 老师 means TEACHER. 学生 means student, while 医生 means doctor. Remember that 师 often appears in words connected with skilled professionals or instructors.',
+      etymology:'老 originally relates to age or experience, while 师 means master, instructor, or teacher. Together, 老师 refers to a respected person who teaches others.',
+      strokeTip:'Write 老 first and 师 second. Within each character, follow the general rules of top before bottom and left before right. Keep both characters similar in size.'
+    },
+    {
+      char:'这个', type:'word', pinyin:'zhège', meaning:'this / this one', audioKey:'02',
+      intro:'Use this everyday expression when pointing to something close to you.',
+      question:'What does the word 这个 mean?',
+      options:['this / this one','that / that one','which one'],
+      related:[{char:'这个',py:'zhège',en:'this/this one'},{char:'那个',py:'nàge',en:'that/that one'},{char:'哪个',py:'nǎge',en:'which one'}],
+      correctSpeech:'Correct! 这个, pronounced zhège, means this or this one. In natural speech, 个 is often pronounced lightly.',
+      wrongGuide:'That\'s not quite right. 这个 means THIS or THIS ONE. 那个 means that one, and 哪个 asks which one. The demonstrative 这 points to something near the speaker.',
+      etymology:'这 is a demonstrative meaning this, and 个 is the most widely used general measure word. Together they form the common phrase 这个, meaning this one.',
+      strokeTip:'Write 这 before 个. In 这, complete the inner component first and write the walking radical 辶 last. 个 is written from top to bottom.'
+    },
+    {
+      char:'字', type:'character', pinyin:'zì', meaning:'written character / word', audioKey:'03',
+      intro:'This word refers to a written symbol, especially a Chinese character.',
+      question:'What does the character 字 mean?',
+      options:['written character','sentence','sound'],
+      related:[{char:'字',py:'zì',en:'written character'},{char:'句子',py:'jùzi',en:'sentence'},{char:'声音',py:'shēngyīn',en:'sound'}],
+      correctSpeech:'Well done! 字, pronounced zì, means a written character or written word. 汉字 means Chinese characters.',
+      wrongGuide:'That\'s not quite right. 字 means a WRITTEN CHARACTER or written word. A sentence is 句子, while sound is 声音. Think of 字 as something you can read or write.',
+      etymology:'字 contains 宀, a roof, above 子, a child. In early usage it was connected with raising a child and later developed meanings related to written symbols and naming.',
+      strokeTip:'Write the roof radical 宀 first, then write 子 underneath it. Keep the lower component centred beneath the roof.'
+    },
+    {
+      char:'怎么', type:'word', pinyin:'zěnme', meaning:'how', audioKey:'04',
+      intro:'This question word asks about a method, condition, or manner.',
+      question:'What does the word 怎么 mean?',
+      options:['how','why','when'],
+      related:[{char:'怎么',py:'zěnme',en:'how'},{char:'为什么',py:'wèishénme',en:'why'},{char:'什么时候',py:'shénme shíhou',en:'when'}],
+      correctSpeech:'Excellent! 怎么, pronounced zěnme, means how. For example, 这个字怎么念? means “How is this character pronounced?”',
+      wrongGuide:'That\'s not quite right. 怎么 means HOW. 为什么 asks why, and 什么时候 asks when. Use 怎么 when asking about the way something is done.',
+      etymology:'怎么 is a fixed question expression in modern Mandarin. 怎 contributes the interrogative sense, while 么 appears in several common question words, including 什么.',
+      strokeTip:'Write 怎 first and 么 second. In 怎, complete the upper component before 心 at the bottom. Write 么 from top to bottom.'
+    },
+    {
+      char:'是', type:'character', pinyin:'shì', meaning:'to be / yes', audioKey:'05',
+      intro:'This is one of the most frequently used verbs in Mandarin.',
+      question:'What does the character 是 mean?',
+      options:['to be / yes','to have','to go'],
+      related:[{char:'是',py:'shì',en:'to be/yes'},{char:'有',py:'yǒu',en:'to have'},{char:'去',py:'qù',en:'to go'}],
+      correctSpeech:'Correct! 是, pronounced shì, usually means to be and can also be used to give an affirmative answer.',
+      wrongGuide:'That\'s not quite right. 是 means TO BE or YES. 有 means to have, and 去 means to go. Use 是 to connect a subject with a noun, as in 她是老师, “She is a teacher.”',
+      etymology:'是 originally carried meanings connected with correctness or being right. In modern Mandarin, it functions mainly as the linking verb “to be” and as an affirmative response.',
+      strokeTip:'Write the upper 日 section first, then complete the lower component. Keep the central vertical structure aligned so the character remains balanced.'
+    },
+    {
+      char:'火', type:'character', pinyin:'huǒ', meaning:'fire', audioKey:'06',
+      intro:'Its spreading strokes resemble flames rising from a fire.',
+      question:'What does the character 火 mean?',
+      options:['fire','water','wood'],
+      related:[{char:'火',py:'huǒ',en:'fire'},{char:'水',py:'shuǐ',en:'water'},{char:'木',py:'mù',en:'wood'}],
+      correctSpeech:'Excellent! 火, pronounced huǒ, means fire. You can see it in words such as 火车, train, and 火锅, hot pot.',
+      wrongGuide:'That\'s not quite right. 火 means FIRE. 水 means water, and 木 means wood or tree. The strokes of 火 spread outward like flames.',
+      etymology:'火 developed from an ancient pictograph of flames. It is also a common component in characters connected with heat, burning, or cooking.',
+      strokeTip:'Write 火 in four strokes: the two smaller upper strokes, followed by the left-falling and right-falling lower strokes. Let the lower strokes open outward like flames.'
+    },
+    {
+      char:'什么', type:'word', pinyin:'shénme', meaning:'what', audioKey:'07',
+      intro:'This essential question word is used to ask about things, names, and information.',
+      question:'What does the word 什么 mean?',
+      options:['what','who','where'],
+      related:[{char:'什么',py:'shénme',en:'what'},{char:'谁',py:'shéi',en:'who'},{char:'哪里',py:'nǎlǐ',en:'where'}],
+      correctSpeech:'Correct! 什么, pronounced shénme, means what. For example, 这是什么? means “What is this?”',
+      wrongGuide:'That\'s not quite right. 什么 means WHAT. 谁 means who, while 哪里 means where. Use 什么 when asking for the identity or type of a thing.',
+      etymology:'什么 is a fixed interrogative expression in Mandarin. The second syllable is normally neutral in everyday speech, so it is commonly pronounced shénme.',
+      strokeTip:'Write 什 first and 么 second. In 什, write the person radical 亻 before 十. Keep the two characters evenly spaced.'
+    },
+    {
+      char:'意思', type:'word', pinyin:'yìsi', meaning:'meaning / idea', audioKey:'08',
+      intro:'Use this word when asking what a word, action, or statement means.',
+      question:'What does the word 意思 mean?',
+      options:['meaning / idea','pronunciation','grammar'],
+      related:[{char:'意思',py:'yìsi',en:'meaning/idea'},{char:'发音',py:'fāyīn',en:'pronunciation'},{char:'语法',py:'yǔfǎ',en:'grammar'}],
+      correctSpeech:'Excellent! 意思, pronounced yìsi, means meaning or idea. 什么意思? is the natural way to ask “What does it mean?”',
+      wrongGuide:'That\'s not quite right. 意思 means MEANING or IDEA. 发音 means pronunciation, and 语法 means grammar. In conversation, 什么意思? asks for an explanation of meaning or intention.',
+      etymology:'意 relates to thought, intention, or meaning, while 思 relates to thinking. Together, 意思 refers to meaning, idea, intention, or interest depending on context.',
+      strokeTip:'Write 意 first and 思 second. Both characters contain 心-related elements at the bottom, so leave enough space and keep the lower parts compact.'
+    }
+  ]
+},
+
+/* ─────────── PRE-INTERMEDIATE ─────────── */
+preint: {
+  lessonNumber: '4275',
+  lessonTitle: 'Coffee Break Series – Making a Good First Impression',
+  label: 'Pre-Intermediate',
+  pillLabel: 'ChinesePod · Lesson #4275',
+  data: [
+    {
+      char:'会计', type:'word', pinyin:'kuàijì', meaning:'accountant / accounting', audioKey:'01',
+      intro:'This workplace word names both a profession and the field of accounting.',
+      question:'What does the word 会计 mean?',
+      options:['accountant / accounting','manager','engineer'],
+      related:[{char:'会计',py:'kuàijì',en:'accountant/accounting'},{char:'经理',py:'jīnglǐ',en:'manager'},{char:'工程师',py:'gōngchéngshī',en:'engineer'}],
+      correctSpeech:'Correct! 会计, pronounced kuàijì, means accountant or accounting. Context tells you whether it refers to the person or the department or function.',
+      wrongGuide:'That\'s not quite right. 会计 means ACCOUNTANT or ACCOUNTING. 经理 means manager, while 工程师 means engineer. Note that 会 is pronounced kuài in this word, not huì.',
+      etymology:'会计 is an established compound associated with calculating, recording, and reviewing financial accounts. Its special pronunciation, kuàijì, should be learned as a complete word.',
+      strokeTip:'Write 会 before 计. In 计, write the speech radical 讠first and 十 second. Pay special attention to the pronunciation rather than trying to infer it character by character.'
+    },
+    {
+      char:'部门', type:'word', pinyin:'bùmén', meaning:'department', audioKey:'02',
+      intro:'Companies and organisations are commonly divided into these working units.',
+      question:'What does the word 部门 mean?',
+      options:['department','position','company'],
+      related:[{char:'部门',py:'bùmén',en:'department'},{char:'职位',py:'zhíwèi',en:'position'},{char:'公司',py:'gōngsī',en:'company'}],
+      correctSpeech:'Excellent! 部门, pronounced bùmén, means department. For example, 财务部门 is the finance department.',
+      wrongGuide:'That\'s not quite right. 部门 means DEPARTMENT. 职位 means a job position, and 公司 means company. A department is one organisational section within a larger company or institution.',
+      etymology:'部 can refer to a section or division, while 门 can indicate a branch, category, or institutional unit. Together they form the modern word for department.',
+      strokeTip:'Write 部 first and 门 second. In 部, complete the left component before the 阝component on the right. Write 门 from the outside inward.'
+    },
+    {
+      char:'指教', type:'word', pinyin:'zhǐjiào', meaning:'to offer guidance or correction', audioKey:'03',
+      intro:'This polite word is often used when inviting someone more experienced to give advice.',
+      question:'What does the word 指教 mean?',
+      options:['to offer guidance or correction','to give an order','to introduce someone'],
+      related:[{char:'指教',py:'zhǐjiào',en:'offer guidance'},{char:'命令',py:'mìnglìng',en:'give an order'},{char:'介绍',py:'jièshào',en:'introduce'}],
+      correctSpeech:'Well done! 指教, pronounced zhǐjiào, means to give guidance, advice, or correction. 请多指教 is a polite expression meaning “Please give me your guidance.”',
+      wrongGuide:'That\'s not quite right. 指教 means TO OFFER GUIDANCE OR CORRECTION. It is polite and modest, especially when speaking to a colleague, senior, or expert.',
+      etymology:'指 can mean to point out or indicate, and 教 means to teach. Together they describe pointing something out in order to guide or correct another person.',
+      strokeTip:'Write 指 before 教. In 指, write the hand radical 扌first. In 教, write the left section before the 攵 component on the right.'
+    },
+    {
+      char:'拜托', type:'word', pinyin:'bàituō', meaning:'to ask a favour / please', audioKey:'04',
+      intro:'This useful expression makes a request sound earnest and personal.',
+      question:'What does the word 拜托 mean?',
+      options:['to ask a favour / please','to refuse','to apologise'],
+      related:[{char:'拜托',py:'bàituō',en:'ask a favour/please'},{char:'拒绝',py:'jùjué',en:'refuse'},{char:'道歉',py:'dàoqiàn',en:'apologise'}],
+      correctSpeech:'Correct! 拜托, pronounced bàituō, means to ask someone for a favour. It can also be used on its own like an emphatic “Please!”',
+      wrongGuide:'That\'s not quite right. 拜托 means TO ASK A FAVOUR or PLEASE. 拒绝 means to refuse, and 道歉 means to apologise. The expression often carries a sincere or urgent tone.',
+      etymology:'拜 conveys respect, while 托 means to entrust or ask someone to take care of something. Together they express respectfully entrusting a request to another person.',
+      strokeTip:'Write 拜 first and 托 second. In 托, write the hand radical 扌before the right component. Keep the two characters compact and level.'
+    },
+    {
+      char:'尽管', type:'word', pinyin:'jǐnguǎn', meaning:'feel free to / although', audioKey:'05',
+      intro:'This word has two common uses: encouraging someone freely, or introducing a contrast.',
+      question:'What does the word 尽管 mean?',
+      options:['feel free to / although','immediately','perhaps'],
+      related:[{char:'尽管',py:'jǐnguǎn',en:'feel free to/although'},{char:'马上',py:'mǎshàng',en:'immediately'},{char:'也许',py:'yěxǔ',en:'perhaps'}],
+      correctSpeech:'Excellent! 尽管, pronounced jǐnguǎn, can mean “feel free to” in requests and “although” when introducing a concession.',
+      wrongGuide:'That\'s not quite right. 尽管 means FEEL FREE TO or ALTHOUGH, depending on context. For example, 有问题尽管问 means “Feel free to ask if you have questions.”',
+      etymology:'尽 carries a sense of doing something fully or without reserve, while 管 historically relates to managing or concerning oneself with something. Their combination developed several adverbial and conjunction uses.',
+      strokeTip:'Write 尽 before 管. 管 has the bamboo radical ⺮ at the top, so write the two upper bamboo components before the lower section.'
+    },
+    {
+      char:'关照', type:'word', pinyin:'guānzhào', meaning:'to look after / to give special consideration', audioKey:'06',
+      intro:'This polite expression asks someone to provide care, support, or consideration.',
+      question:'What does the word 关照 mean?',
+      options:['to look after / give consideration','to criticise','to compete'],
+      related:[{char:'关照',py:'guānzhào',en:'look after/give consideration'},{char:'批评',py:'pīpíng',en:'criticise'},{char:'竞争',py:'jìngzhēng',en:'compete'}],
+      correctSpeech:'Correct! 关照, pronounced guānzhào, means to look after someone or give them special consideration. 请多关照 is a courteous phrase used when beginning a new relationship.',
+      wrongGuide:'That\'s not quite right. 关照 means TO LOOK AFTER or GIVE SPECIAL CONSIDERATION. It expresses care and support, not criticism or competition.',
+      etymology:'关 can mean to concern or care about, while 照 can mean to attend to or look after. Together they describe giving someone attention and support.',
+      strokeTip:'Write 关 before 照. In 照, complete the upper components first and write the four-dot fire component 灬 at the bottom last.'
+    },
+    {
+      char:'照顾', type:'word', pinyin:'zhàogù', meaning:'to take care of', audioKey:'07',
+      intro:'Use this everyday verb when caring for a person, animal, task, or business.',
+      question:'What does the word 照顾 mean?',
+      options:['to take care of','to wait for','to agree with'],
+      related:[{char:'照顾',py:'zhàogù',en:'take care of'},{char:'等待',py:'děngdài',en:'wait for'},{char:'同意',py:'tóngyì',en:'agree with'}],
+      correctSpeech:'Excellent! 照顾, pronounced zhàogù, means to take care of or look after. It is common in both personal and professional situations.',
+      wrongGuide:'That\'s not quite right. 照顾 means TO TAKE CARE OF. 等待 means to wait for, and 同意 means to agree. 照顾 usually involves practical attention or responsibility.',
+      etymology:'照 can mean to attend to, and 顾 means to look back at, consider, or care for. Together they form the common verb “to look after.”',
+      strokeTip:'Write 照 first and 顾 second. In 顾, complete the left component before 页 on the right. Keep the more complex characters evenly proportioned.'
+    },
+    {
+      char:'包涵', type:'word', pinyin:'bāohan', meaning:'to forgive / to bear with', audioKey:'08',
+      intro:'This courteous expression asks another person to excuse a mistake or shortcoming.',
+      question:'What does the word 包涵 mean?',
+      options:['to forgive / bear with','to praise','to remind'],
+      related:[{char:'包涵',py:'bāohan',en:'forgive/bear with'},{char:'表扬',py:'biǎoyáng',en:'praise'},{char:'提醒',py:'tíxǐng',en:'remind'}],
+      correctSpeech:'Well done! 包涵, pronounced bāohan, means to forgive, excuse, or bear with someone. 请多包涵 is a polite request for understanding.',
+      wrongGuide:'That\'s not quite right. 包涵 means TO FORGIVE, EXCUSE, or BEAR WITH. It is a modest expression used when you may have caused inconvenience or made an error.',
+      etymology:'包 means to contain or include, while 涵 can mean to contain, tolerate, or cultivate. Together they express generously making room for another person’s faults.',
+      strokeTip:'Write 包 before 涵. In 涵, write the water radical 氵first, then the right component from top to bottom.'
+    },
+    {
+      char:'幸会', type:'word', pinyin:'xìnghuì', meaning:'pleased to meet you', audioKey:'09',
+      intro:'This formal expression is used when meeting someone for the first time.',
+      question:'What does the word 幸会 mean?',
+      options:['pleased to meet you','welcome back','goodbye'],
+      related:[{char:'幸会',py:'xìnghuì',en:'pleased to meet you'},{char:'欢迎回来',py:'huānyíng huílái',en:'welcome back'},{char:'再见',py:'zàijiàn',en:'goodbye'}],
+      correctSpeech:'Correct! 幸会, pronounced xìnghuì, is a polite and somewhat formal way to say “Pleased to meet you.”',
+      wrongGuide:'That\'s not quite right. 幸会 means PLEASED TO MEET YOU. It is used at a first meeting and sounds more formal than simply saying 你好.',
+      etymology:'幸 means fortunate, and 会 means to meet. The expression literally conveys that meeting the other person is a fortunate occasion.',
+      strokeTip:'Write 幸 first and 会 second. Both are vertically structured characters, so keep their central strokes aligned and their widths balanced.'
+    }
+  ]
+},
+
+/* ─────────── UPPER INTERMEDIATE ─────────── */
+upper: {
+  lessonNumber: '4425',
+  lessonTitle: '入乡随俗',
+  label: 'Upper Intermediate',
+  pillLabel: 'ChinesePod · Lesson #4425',
+  data: [
+    {
+      char:'一言难尽', type:'idiom', pinyin:'yī yán nán jìn', meaning:'hard to explain in a few words', audioKey:'01',
+      intro:'Use this idiom when a situation is too complicated, frustrating, or emotional to explain briefly.',
+      question:'What does the idiom 一言难尽 mean?',
+      options:['hard to explain in a few words','easy to understand','not worth mentioning'],
+      related:[{char:'一言难尽',py:'yī yán nán jìn',en:'hard to explain briefly'},{char:'一目了然',py:'yī mù liǎo rán',en:'clear at a glance'},{char:'不值一提',py:'bù zhí yī tí',en:'not worth mentioning'}],
+      correctSpeech:'Excellent! 一言难尽 means “It is hard to explain in just a few words.” It often suggests that the full story is complicated or unpleasant.',
+      wrongGuide:'That\'s not quite right. 一言难尽 does not mean something is clear or unimportant. It means the matter is too complicated to sum up quickly.',
+      etymology:'The idiom combines 一言, “a single statement,” with 难尽, “difficult to express completely.” Together, it says that one sentence cannot tell the whole story.',
+      strokeTip:'Write the four characters from left to right. Pay particular attention to 难 and 尽, and keep all four characters consistent in height and spacing.'
+    },
+    {
+      char:'本地', type:'word', pinyin:'běndì', meaning:'local / this locality', audioKey:'02',
+      intro:'This word describes the place where you currently are or something originating there.',
+      question:'What does the word 本地 mean?',
+      options:['local','foreign','remote'],
+      related:[{char:'本地',py:'běndì',en:'local'},{char:'外国',py:'wàiguó',en:'foreign country'},{char:'偏远',py:'piānyuǎn',en:'remote'}],
+      correctSpeech:'Correct! 本地, pronounced běndì, means local or this locality. 本地人 means a local resident.',
+      wrongGuide:'That\'s not quite right. 本地 means LOCAL. It refers to the current area, as opposed to somewhere foreign or distant.',
+      etymology:'本 can mean this, original, or one’s own, while 地 means place or land. Together they refer to the local place or area.',
+      strokeTip:'Write 本 before 地. In 地, write the earth radical 土 first and the right component 也 second.'
+    },
+    {
+      char:'地道', type:'word', pinyin:'dìdao', meaning:'authentic / genuine / typical', audioKey:'03',
+      intro:'When describing food, language, or customs, this word praises them as genuinely local and authentic.',
+      question:'What does the word 地道 mean?',
+      options:['authentic / genuine','ordinary','expensive'],
+      related:[{char:'地道',py:'dìdao',en:'authentic/genuine'},{char:'普通',py:'pǔtōng',en:'ordinary'},{char:'昂贵',py:'ángguì',en:'expensive'}],
+      correctSpeech:'Well done! 地道, pronounced dìdao, means authentic, genuine, or characteristically local. 地道的北京话 means authentic Beijing speech.',
+      wrongGuide:'That\'s not quite right. In this context, 地道 means AUTHENTIC or GENUINE. It comments on cultural or local authenticity, not price or quality alone.',
+      etymology:'地道 literally can refer to an underground passage, but as an adjective it developed the sense of something true to its place, style, or tradition. The second syllable is often neutral in this use.',
+      strokeTip:'Write 地 before 道. In 道, complete the inner component 首 first and write the walking radical 辶 last.'
+    },
+    {
+      char:'入乡随俗', type:'idiom', pinyin:'rù xiāng suí sú', meaning:'when in Rome, do as the Romans do', audioKey:'04',
+      intro:'This idiom advises people to respect and follow local customs when entering a new place.',
+      question:'What does the idiom 入乡随俗 mean?',
+      options:['follow the local customs','keep your own habits unchanged','avoid local people'],
+      related:[{char:'入乡随俗',py:'rù xiāng suí sú',en:'follow local customs'},{char:'我行我素',py:'wǒ xíng wǒ sù',en:'act in one’s own way'},{char:'格格不入',py:'gé gé bù rù',en:'not fit in'}],
+      correctSpeech:'Excellent! 入乡随俗 means “When you enter a place, follow its customs,” similar to “When in Rome, do as the Romans do.”',
+      wrongGuide:'That\'s not quite right. 入乡随俗 encourages adapting respectfully to local customs. It does not mean ignoring local people or insisting on doing everything your own way.',
+      etymology:'入乡 means entering a locality, while 随俗 means following its customs. The idiom reflects the practical value of cultural awareness and social adaptation.',
+      strokeTip:'Write the four characters from left to right. In 随, write the left 阝component before the right side, and finish the walking radical 辶 last.'
+    },
+    {
+      char:'改良', type:'word', pinyin:'gǎiliáng', meaning:'to improve / to refine', audioKey:'05',
+      intro:'This verb means improving something by changing or refining it, often without replacing it completely.',
+      question:'What does the word 改良 mean?',
+      options:['to improve / refine','to destroy','to copy exactly'],
+      related:[{char:'改良',py:'gǎiliáng',en:'improve/refine'},{char:'破坏',py:'pòhuài',en:'destroy'},{char:'照搬',py:'zhàobān',en:'copy exactly'}],
+      correctSpeech:'Correct! 改良, pronounced gǎiliáng, means to improve or refine something. It is often used for methods, products, recipes, or varieties.',
+      wrongGuide:'That\'s not quite right. 改良 means TO IMPROVE or REFINE. It suggests making constructive changes, rather than destroying something or copying it without adjustment.',
+      etymology:'改 means to change or correct, and 良 means good or fine. Together they convey changing something so that it becomes better.',
+      strokeTip:'Write 改 before 良. In 改, complete the left component first, then write 攵 on the right. 良 is written from top to bottom.'
+    },
+    {
+      char:'萝卜青菜各有所爱', type:'idiom', pinyin:'luóbo qīngcài, gè yǒu suǒ ài', meaning:'different people have different preferences', audioKey:'06',
+      intro:'This saying uses two everyday vegetables to express that tastes naturally differ from person to person.',
+      question:'What does the idiom 萝卜青菜各有所爱 mean?',
+      options:['everyone has different tastes','everyone likes the same thing','healthy food is always best'],
+      related:[{char:'萝卜青菜各有所爱',py:'luóbo qīngcài, gè yǒu suǒ ài',en:'different people have different tastes'},{char:'众口难调',py:'zhòng kǒu nán tiáo',en:'it is hard to please everyone'},{char:'千篇一律',py:'qiān piān yī lǜ',en:'all the same'}],
+      correctSpeech:'Excellent! 萝卜青菜各有所爱 means that everyone has different tastes—literally, some prefer radishes and others prefer green vegetables.',
+      wrongGuide:'That\'s not quite right. This saying does not claim that everyone likes the same thing. It accepts that personal preferences naturally differ.',
+      etymology:'萝卜 means radish, 青菜 means green vegetables, and 各有所爱 means each person has what they love. The everyday food comparison makes the idea memorable and conversational.',
+      strokeTip:'Because this is a long expression, write it in clearly spaced groups: 萝卜, 青菜, and 各有所爱. Both 萝 and 菜 begin with the grass radical 艹.'
+    },
+    {
+      char:'原汁原味', type:'idiom', pinyin:'yuán zhī yuán wèi', meaning:'original flavour / authentic character', audioKey:'07',
+      intro:'This idiom praises something for preserving its original taste, style, or character.',
+      question:'What does the idiom 原汁原味 mean?',
+      options:['original and authentic','heavily modified','bland and tasteless'],
+      related:[{char:'原汁原味',py:'yuán zhī yuán wèi',en:'original/authentic character'},{char:'面目全非',py:'miàn mù quán fēi',en:'changed beyond recognition'},{char:'索然无味',py:'suǒ rán wú wèi',en:'dull and tasteless'}],
+      correctSpeech:'Correct! 原汁原味 literally means “the original juice and original flavour” and describes something preserved in its authentic form.',
+      wrongGuide:'That\'s not quite right. 原汁原味 means ORIGINAL and AUTHENTIC, not heavily altered or lacking flavour. It can describe food, language, culture, or artistic style.',
+      etymology:'原 means original, 汁 means juice, and 味 means flavour. Repeating 原 emphasises that both the substance and character remain true to the original.',
+      strokeTip:'Write the four characters from left to right. 汁 uses the water radical 氵, while 味 uses the mouth radical 口. Keep the repeated 原 characters consistent.'
+    },
+    {
+      char:'热气腾腾', type:'idiom', pinyin:'rèqì téngténg', meaning:'steaming hot', audioKey:'08',
+      intro:'This vivid expression describes hot food or liquid with steam rising strongly from it.',
+      question:'What does the idiom 热气腾腾 mean?',
+      options:['steaming hot','ice cold','slightly warm'],
+      related:[{char:'热气腾腾',py:'rèqì téngténg',en:'steaming hot'},{char:'冰凉',py:'bīngliáng',en:'ice cold'},{char:'温热',py:'wēnrè',en:'warm'}],
+      correctSpeech:'Well done! 热气腾腾 means steaming hot, with visible hot vapour rising. It creates a lively image of freshly cooked food.',
+      wrongGuide:'That\'s not quite right. 热气腾腾 means STEAMING HOT. It is much stronger and more vivid than simply saying something is warm.',
+      etymology:'热气 means hot air or steam, while 腾腾 suggests continuous rising or surging. The repetition gives the phrase energy and visual movement.',
+      strokeTip:'Write 热气 first, followed by the repeated 腾腾. In 热, write the upper structure first and the four-dot fire component 灬 last. Keep the two 腾 characters identical.'
+    }
+  ]
+}
+};
+
+/* ── STATE ── */
+let currentLevel = null;
+let DATA = [];
+let order = [], idx = 0, score = 0, answered = false, results = [], hintTimer, lastSpeech = '';
+const synth = window.speechSynthesis;
+
+/* Render the confirmed ChinesePod lesson identity on each quiz card. */
+Object.entries(LEVELS).forEach(([key, lesson]) => {
+  const title = document.getElementById(`cardTitle-${key}`);
+  const meta = document.getElementById(`cardMeta-${key}`);
+  if (title) title.textContent = lesson.lessonTitle;
+  if (meta) meta.innerHTML = `ChinesePod Lesson #${lesson.lessonNumber} <span class="lesson-level">· Level: ${lesson.label}</span>`;
+});
+
+/* ── LEVEL SELECT ── */
+const bgCharsAll = ['学','中','国','好','明','路','情','影','机'];
+let bgI = 0;
+setInterval(() => {
+  bgI = (bgI + 1) % bgCharsAll.length;
+  document.getElementById('levelBg').textContent = bgCharsAll[bgI];
+}, 2000);
+
+function selectLevel(lv) {
+  currentLevel = lv;
+  DATA = LEVELS[lv].data;
+  const ldata = LEVELS[lv];
+
+  // Set intro pill
+  document.getElementById('introPillText').textContent = `ChinesePod · Lesson #${ldata.lessonNumber}`;
+  document.getElementById('introLessonMeta').innerHTML = `<strong>ChinesePod Lesson #${ldata.lessonNumber}</strong><br>${ldata.lessonTitle}<br><span>Level: ${ldata.label}</span>`;
+
+  // Set topbar level pill
+  document.getElementById('tbLessonNumber').textContent = `Lesson ${ldata.lessonNumber}`;
+  document.getElementById('tbLessonTitle').textContent = ldata.lessonTitle;
+  document.getElementById('tbLevelPill').textContent = ldata.label;
+
+  // Build intro chars
+  const ic = document.getElementById('introChars');
+  ic.innerHTML = '';
+  DATA.forEach((q, i) => {
+    const d = document.createElement('div');
+    d.className = 'ic';
+    d.style.animationDelay = (i * .06) + 's';
+    d.innerHTML = `<span class="ic-c">${q.char}</span><span class="ic-p">${q.pinyin}</span><span class="ic-m">${q.meaning}</span>`;
+    ic.appendChild(d);
+  });
+
+  // Cycle intro bg
+  const bgChars = DATA.map(d => d.char);
+  let bgi = 0;
+  document.getElementById('introBg').textContent = bgChars[0];
+
+  show('s-intro');
+}
+
+/* ── UTILS ── */
+function show(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+function shuffle(a) {
+  const b = [...a];
+  for (let i = b.length - 1; i > 0; i--) {
+    const j = 0 | Math.random() * (i + 1);
+    [b[i], b[j]] = [b[j], b[i]];
+  }
+  return b;
+}
+function el(tag, cls) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  return e;
+}
+
+function itemType(q) {
+  return q.type || (q.idiom ? 'idiom' : q.word ? 'word' : 'character');
+}
+function questionFor(q) {
+  const type = itemType(q);
+  if (type === 'idiom') return q.question || `What does the idiom ${q.char} mean?`;
+  if (type === 'word') return q.question || `What does the word ${q.char} mean?`;
+  return q.question || `What does the character ${q.char} mean?`;
+}
+function nextLabel(q) {
+  const type = itemType(q);
+  return `Next ${type.charAt(0).toUpperCase() + type.slice(1)}`;
+}
+
+function audioFile(type) {
+  const names = {
+    intro: 'Intro',
+    question: 'Question',
+    correct: 'Correct',
+    wrong: 'Wrong',
+    etymology: 'Etymology',
+    strokeTip: 'Stroke Tip',
+
+  };
+  return `audio/${currentLevel}/question${order[idx] + 1}/${names[type]}.m4a`;
+}
+
+/* ── GAME FLOW ── */
+function startGame() {
+  show('s-game');
+  order = shuffle([...Array(DATA.length).keys()]); // randomized question order every quiz
+  idx = 0; score = 0; results = [];
+  updateAnswerStatus();
+  loadQuestion();
+}
+
+function updateAnswerStatus() {
+  const correct = results.filter(r => r.ok).length;
+  const wrong = results.filter(r => !r.ok).length;
+  const answeredCount = results.length;
+  const correctEl = document.getElementById('tbCorrectCount');
+  const wrongEl = document.getElementById('tbWrongCount');
+  const stepEl = document.getElementById('tbProgressStep');
+  if (correctEl) correctEl.textContent = correct;
+  if (wrongEl) wrongEl.textContent = wrong;
+  if (stepEl) stepEl.textContent = `${answeredCount} of ${DATA.length} answered`;
+}
+
+function loadQuestion() {
+  answered = false;
+  clearTimeout(hintTimer);
+  const q = DATA[order[idx]];
+  const completed = idx;
+  const percent = Math.round((completed / DATA.length) * 100);
+  document.getElementById('tbCntCurrent').textContent = String(idx + 1).padStart(2, '0');
+  document.getElementById('tbCntTotal').textContent = `/ ${DATA.length}`;
+  document.getElementById('tbProgressText').textContent = `${percent}% complete`;
+  updateAnswerStatus();
+  document.getElementById('tbFill').style.width = percent + '%';
+  const track = document.querySelector('.tb-track');
+  if (track) track.setAttribute('aria-valuenow', String(percent));
+
+  const stage = document.getElementById('stage');
+  stage.innerHTML = '';
+  const gameActions = document.getElementById('gameActions');
+  if (gameActions) gameActions.innerHTML = '';
+  const gameScroll = document.getElementById('gameScroll');
+  if (gameScroll) gameScroll.scrollTop = 0;
+
+  /* ── Question card ── */
+  const qcard = el('div', 'q-card');
+
+  // Character display (grid box with the character — this is the ONLY place the char shows)
+  const charStage = el('div', 'char-stage');
+  const gridLines = el('div', 'char-grid-lines');
+  const theChar = el('div', 'the-char pop');
+  theChar.id = 'mainChar';
+  theChar.textContent = q.char;
+  charStage.appendChild(gridLines);
+  charStage.appendChild(theChar);
+
+  const qtext = el('div', 'q-text');
+  qtext.id = 'qtext';
+  qtext.innerHTML = `<div class="q-speaking" id="speaking">🔊 Listening to question<div class="wave"><span></span><span></span><span></span><span></span><span></span></div></div>`;
+
+  const hintPill = el('div', 'hint-pill');
+  hintPill.id = 'hintPill';
+  hintPill.textContent = q.intro;
+
+  qcard.appendChild(charStage);
+  qcard.appendChild(qtext);
+  qcard.appendChild(hintPill);
+  stage.appendChild(qcard);
+
+  /* ── Options — TEXT ONLY, no characters ── */
+  const optsWrap = el('div', 'opts');
+  optsWrap.id = 'optsWrap';
+  optsWrap.style.display = 'none';
+  const labels = ['A', 'B', 'C'];
+  const opts = shuffle(q.options);
+  opts.forEach((opt, i) => {
+    const field = el('div', 'option-field');
+    const input = el('input', 'btn-check');
+    input.type = 'radio';
+    input.name = `answer-${idx}`;
+    input.id = `answer-${idx}-${i}`;
+    input.autocomplete = 'off';
+    const label = el('label', 'opt');
+    label.setAttribute('for', input.id);
+    label.innerHTML = `
+      <div class="opt-num">${labels[i]}</div>
+      <div style="flex:1"><div class="opt-label">${opt}</div></div>
+      <div class="opt-check">${opt === q.meaning ? '✓' : '✗'}</div>
+    `;
+    input.addEventListener('change', () => pick(opt, label, q));
+    field.appendChild(input);
+    field.appendChild(label);
+    optsWrap.appendChild(field);
+  });
+  stage.appendChild(optsWrap);
+
+  // Reveal options after recorded question audio
+  const reveal = () => {
+    document.getElementById('qtext').innerHTML = `<strong style="font-size:18px;line-height:1.4">${questionFor(q)}</strong>`;
+    optsWrap.style.display = 'flex';
+    optsWrap.style.flexDirection = 'column';
+    hintTimer = setTimeout(() => document.getElementById('hintPill').classList.add('show'), 8000);
+  };
+
+  playAudioSequence([audioFile('intro'), audioFile('question')], reveal);
+}
+
+function pick(choice, btn, q) {
+  if (answered) return;
+  answered = true;
+  clearTimeout(hintTimer);
+  document.querySelectorAll('.btn-check').forEach(input => input.disabled = true);
+  const ok = choice === q.meaning;
+
+  if (ok) {
+    btn.className = 'opt s-correct';
+    document.getElementById('mainChar').className = 'the-char cheer';
+    score++;
+    results.push({ ...q, ok: true });
+    playBeep(true);
+    doConfetti();
+    showCorrectFeedback(q);
+    playAudioSequence([audioFile('correct')]);
+  } else {
+    btn.className = 'opt s-wrong';
+    document.getElementById('mainChar').className = 'the-char shake';
+    results.push({ ...q, ok: false });
+    // Reveal correct option
+    document.querySelectorAll('.opt').forEach(b => {
+      const lbl = b.querySelector('.opt-label');
+      if (lbl && lbl.textContent === q.meaning) b.className = 'opt s-reveal';
+    });
+    playBeep(false);
+    showWrongGuide(q, choice);
+    playAudioSequence([audioFile('wrong'), audioFile('etymology'), audioFile('strokeTip')]);
+  }
+
+  updateAnswerStatus();
+
+  // Action buttons — Play Again appears after EVERY answered question
+  const btnRow = el('div', 'btn-row');
+
+  const replayBtn = el('button', 'btn-play-again');
+  replayBtn.innerHTML = 'Play Again <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 4v6h6M23 20v-6h-6"/><path d="M20.49 9A9 9 0 005.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 013.51 15"/></svg>';
+  replayBtn.onclick = () => retryCurrentQuestion(ok);
+
+  const nb = el('button', 'btn-next');
+  nb.innerHTML = `${nextLabel(q)} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
+  nb.onclick = nextQuestion;
+
+  btnRow.appendChild(replayBtn);
+  btnRow.appendChild(nb);
+  document.getElementById('gameActions').appendChild(btnRow);
+}
+
+function buildFeedbackTabs(q, isCorrect, choice = '') {
+  const stage = document.getElementById('stage');
+  const wrap = el('div', 'feedback-tabs');
+  const uid = `feedback-${idx}`;
+  const statusText = isCorrect ? `Correct — ${q.meaning}` : `Review — the correct meaning is “${q.meaning}”`;
+  const explanation = isCorrect ? q.correctSpeech : q.wrongGuide.replace('{choice}', choice);
+  const comparisons = (q.related || []).slice(0, 3).map(r => `
+    <div class="feedback-mini-card"><strong>${r.char}</strong><span>${r.py}</span><small class="d-block text-body-secondary">${r.en}</small></div>
+  `).join('');
+  wrap.innerHTML = `
+    <div class="feedback-head">
+      <div class="feedback-status ${isCorrect ? 'ok' : 'bad'}">${isCorrect ? '✓' : '✕'} ${statusText}</div>
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-feedback-target="#${uid}-meaning" type="button">Meaning</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-feedback-target="#${uid}-origin" type="button">Origin</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-feedback-target="#${uid}-writing" type="button">Writing Tip</button></li>
+      </ul>
+    </div>
+    <div class="tab-content">
+      <div class="tab-pane show active" id="${uid}-meaning">
+        <div class="feedback-meaning">
+          <div class="feedback-answer ${isCorrect ? 'ok' : ''}">
+            <div class="d-flex align-items-center gap-3 mb-2"><span class="feedback-char">${q.char}</span><span><b class="feedback-pinyin">${q.pinyin}</b><br>${q.meaning}</span></div>
+            <p>${explanation}</p>
+          </div>
+          <div class="feedback-mini-compare">${comparisons}</div>
+        </div>
+      </div>
+      <div class="tab-pane" id="${uid}-origin"><p>${q.etymology}</p></div>
+      <div class="tab-pane" id="${uid}-writing"><p>${q.strokeTip}</p></div>
+    </div>`;
+
+  // Bootstrap-looking tabs with vanilla JS, so no Bootstrap JS dependency is needed.
+  wrap.querySelectorAll('[data-feedback-target]').forEach(button => {
+    button.addEventListener('click', () => {
+      wrap.querySelectorAll('.nav-link').forEach(x => x.classList.remove('active'));
+      wrap.querySelectorAll('.tab-pane').forEach(x => x.classList.remove('show', 'active'));
+      button.classList.add('active');
+      wrap.querySelector(button.dataset.feedbackTarget).classList.add('show', 'active');
+    });
+  });
+  stage.appendChild(wrap);
+}
+
+function showCorrectFeedback(q) {
+  buildFeedbackTabs(q, true);
+}
+
+function showWrongGuide(q, choice) {
+  buildFeedbackTabs(q, false, choice);
+}
+
+
+function retryCurrentQuestion(wasCorrect) {
+  synth && synth.cancel();
+  if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+
+  // Undo the last stored answer for this same question, then reload it.
+  if (results.length) results.pop();
+  if (wasCorrect && score > 0) score--;
+  loadQuestion();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function nextQuestion() {
+  synth && synth.cancel();
+  if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+  idx++;
+  if (idx >= DATA.length) { showResults(); return; }
+  loadQuestion();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showResults() {
+  show('s-results');
+  const pct = score / DATA.length;
+  document.getElementById('scoreNum').textContent = `${score}/${DATA.length}`;
+  const c = 2 * Math.PI * 50;
+  setTimeout(() => {
+    const ring = document.getElementById('scoreRing');
+    ring.style.transition = 'stroke-dashoffset 1.4s cubic-bezier(.4,0,.2,1)';
+    ring.style.strokeDashoffset = c - (pct * c);
+    ring.style.stroke = pct >= .75 ? '#1A7A3C' : pct >= .5 ? '#B45309' : '#E1001E';
+  }, 150);
+  const p = Math.round(pct * 100);
+  const msgs = [
+    [100, '完美！Perfect!', 'Every character correct — outstanding performance!'],
+    [75, '很好！Great Job!', 'Strong work — almost mastered all 10 characters.'],
+    [50, '不错！Good Start!', 'Halfway there — review the guides and try again.'],
+    [0, '加油！Keep Going!', 'Every mistake is a lesson — review and retry!']
+  ];
+  const [, h, s] = msgs.find(([t]) => p >= t) || msgs[3];
+  document.getElementById('resH').textContent = h;
+  document.getElementById('resS').textContent = s;
+  const rc = document.getElementById('resChips');
+  rc.innerHTML = '';
+  results.forEach(r => {
+    const chip = el('div', `rchip ${r.ok ? 'ok' : 'fail'}`);
+    chip.innerHTML = `<div class="rchip-c">${r.char}</div><div class="rchip-l">${r.meaning}</div>`;
+    rc.appendChild(chip);
+  });
+  if (p === 100) doConfetti();
+}
+
+function restartGame() {
+  synth && synth.cancel();
+  if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+  startGame();
+}
+
+/* ── RECORDED AUDIO (question-wise folders) ── */
+let currentAudio = null;
+function playAudioSequence(files, cb) {
+  if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+  let i = 0;
+  const playNext = () => {
+    if (i >= files.length) { if (cb) cb(); return; }
+    const a = new Audio(files[i]);
+    currentAudio = a;
+    i++;
+    a.onended = playNext;
+    a.onerror = playNext;
+    a.play().catch(playNext);
+  };
+  playNext();
+}
+
+/* ── SPEECH (unused for now — recorded voice audio is used) ── */
+function speakThen(text, cb) {
+  synth && synth.cancel();
+  if (!synth || !synth.speak) { setTimeout(cb, 800); return; }
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = 0.88; u.pitch = 1.02;
+  const timeout = setTimeout(cb, text.length * 70 + 1500);
+  u.onend = () => { clearTimeout(timeout); cb(); };
+  synth.speak(u);
+}
+
+function speak(text) {
+  synth && synth.cancel();
+  if (!synth) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = 0.88; u.pitch = 1.02;
+  synth.speak(u);
+}
+
+/* ── AUDIO FEEDBACK ── */
+function playBeep(ok) {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    if (ok) {
+      [[523.25, 0], [659.25, .09], [783.99, .18]].forEach(([f, t]) => {
+        const o = ctx.createOscillator(), g = ctx.createGain();
+        o.connect(g); g.connect(ctx.destination);
+        o.type = 'sine'; o.frequency.value = f;
+        g.gain.setValueAtTime(0, ctx.currentTime + t);
+        g.gain.linearRampToValueAtTime(.14, ctx.currentTime + t + .05);
+        g.gain.exponentialRampToValueAtTime(.001, ctx.currentTime + t + .5);
+        o.start(ctx.currentTime + t); o.stop(ctx.currentTime + t + .55);
+      });
+    } else {
+      const o = ctx.createOscillator(), g = ctx.createGain();
+      o.connect(g); g.connect(ctx.destination);
+      o.type = 'sawtooth';
+      o.frequency.setValueAtTime(260, ctx.currentTime);
+      o.frequency.linearRampToValueAtTime(120, ctx.currentTime + .35);
+      g.gain.setValueAtTime(.1, ctx.currentTime);
+      g.gain.exponentialRampToValueAtTime(.001, ctx.currentTime + .38);
+      o.start(); o.stop(ctx.currentTime + .4);
+    }
+  } catch (e) {}
+}
+
+/* ── CONFETTI ── */
+function doConfetti() {
+  const wrap = document.getElementById('cfWrap');
+  const cols = ['#E1001E', '#1A7A3C', '#B45309', '#2487C1', '#000000'];
+  for (let i = 0; i < 55; i++) {
+    const p = el('div', 'cf');
+    p.style.cssText = `left:${10 + Math.random() * 80}%;top:-20px;background:${cols[i % cols.length]};animation-delay:${Math.random() * .5}s;animation-duration:${1.2 + Math.random() * .9}s;transform:rotate(${Math.random() * 360}deg)`;
+    wrap.appendChild(p);
+    setTimeout(() => p.remove(), 2800);
+  }
+}
+
+
+LEVELS['newbie'].data.forEach(item => { if (!item.type) item.type = 'character'; });
+// Standalone lesson module — data is hardcoded and no backend call is made.
+document.addEventListener('DOMContentLoaded', () => {
+  selectLevel(FIXED_LEVEL);
+});
+
+</script>
+</body>
+</html>
