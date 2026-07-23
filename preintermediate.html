@@ -24,9 +24,9 @@
   --ink:#1A1917;
   --ink2:#6B6860;
   --ink3:#AEACA6;
-  --green:#1A7A3C;
-  --green-bg:#F0FDF5;
-  --green-b:#A7F3C0;
+  --green:#35C567;
+  --green-bg:color-mix(in srgb, #35C567 10%, white);
+  --green-b:color-mix(in srgb, #35C567 35%, white);
   --amber:#B45309;
   --amber-bg:#FFFBEB;
   --amber-b:#FDE68A;
@@ -372,7 +372,7 @@ html,body{
 
 /* option states */
 .opt.s-correct{background:var(--green-bg);border-color:var(--green);transform:none;animation:slideRight .35s ease}
-.opt.s-correct .opt-num{background:var(--green);border-color:var(--green);color:#fff}
+.opt.s-correct .opt-num{border-color:var(--green);color:#fff}
 .opt.s-correct .opt-label{color:var(--green)}
 .opt.s-correct .opt-check{opacity:1;background:var(--green);color:#fff}
 @keyframes slideRight{from{transform:translateX(-8px);opacity:.6}to{transform:none;opacity:1}}
@@ -883,7 +883,7 @@ button:focus-visible,.level-card:focus-visible{
 }
 .tb-cnt{
   grid-area:count;display:flex;align-items:baseline;justify-content:center;gap:3px;
-  min-width:68px;padding:8px 11px;border-radius:12px;
+  padding:8px 11px;border-radius:12px;
   background:var(--bg);border:1px solid var(--border);
   font-size:12px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;
 }
@@ -897,7 +897,7 @@ button:focus-visible,.level-card:focus-visible{
   .tb-lesson{gap:10px}
   .tb-lesson-title{font-size:14px}
   .tb-meta,.tb-level-pill{font-size:9px;letter-spacing:.075em}
-  .tb-cnt{min-width:58px;padding:7px 9px;border-radius:10px;font-size:11px}
+  .tb-cnt{padding:7px 9px;border-radius:10px;font-size:11px}
   .tb-track{height:4px}
 }
 
@@ -907,7 +907,7 @@ button:focus-visible,.level-card:focus-visible{
   .tb-lesson{gap:8px}
   .tb-lesson-title{font-size:13px}
   .tb-meta,.tb-level-pill{font-size:8.5px}
-  .tb-cnt{min-width:52px;padding:6px 7px}
+  .tb-cnt{padding:6px 7px}
 }
 
 
@@ -994,7 +994,7 @@ button:focus-visible,.level-card:focus-visible{
   .tb-lesson-title{font-size:13px;line-height:1.2}
   .tb-lesson-number{font-size:8.5px}
   .tb-level-pill{font-size:8px;padding:3px 6px;max-width:112px}
-  .tb-cnt{min-width:74px;padding:7px 8px;border-radius:12px;column-gap:3px}
+  .tb-cnt{padding:7px 8px;border-radius:12px;column-gap:3px}
   .tb-cnt-label{font-size:7px;letter-spacing:.1em}
   .tb-cnt-current{font-size:19px}
   .tb-cnt-total{font-size:9px}
@@ -1018,7 +1018,7 @@ button:focus-visible,.level-card:focus-visible{
   .tb-meta{gap:5px}
   .tb-lesson-number{font-size:7.8px}
   .tb-level-pill{max-width:84px;font-size:7.2px;padding:3px 5px}
-  .tb-cnt{min-width:66px;padding:6px 6px;border-radius:11px}
+  .tb-cnt{padding:6px 6px;border-radius:11px}
   .tb-cnt-current{font-size:17px}
   .tb-cnt-total{font-size:8px}
   .tb-progress-step{display:none}
@@ -1057,7 +1057,7 @@ html,body{background:#fff;overflow:hidden}
 .intro-h,.res-h{font-family:'Roboto Slab',serif}
 .intro-chars{margin-bottom:20px;gap:6px}
 .ic{border-radius:6px;padding:8px 10px;background:#fff;box-shadow:none!important}
-.ic:hover{transform:none;box-shadow:none!important;background:var(--accent)}
+.ic:hover{transform:none;box-shadow:none!important;background:#FEF2F3}
 .btn-start,.btn-again,.btn-next{border-radius:5px;box-shadow:none!important;background:var(--red)}
 .btn-start:hover,.btn-again:hover,.btn-next:hover{transform:none;box-shadow:none!important;background:#BF0019}
 .btn-back-level,.btn-change-level{display:none!important}
@@ -1188,7 +1188,7 @@ html,body{background:#fff;overflow:hidden}
   }
   .tb-lesson{grid-area:lesson;min-width:0}
   .tb-bar-wrap{grid-area:progress;min-width:0;gap:5px}
-  .tb-cnt{grid-area:count;min-width:104px}
+  .tb-cnt{grid-area:count;}
   .tb-brand{width:112px;height:32px;flex-basis:112px}
   .tb-brand img{max-height:32px}
   .tb-divider{height:30px}
@@ -1209,9 +1209,401 @@ html,body{background:#fff;overflow:hidden}
   animation:none!important;
 }
 
+
+
+/* ══ BRAND + ACCESSIBILITY REVISION ══ */
+:root{
+  --level-color:#F7B500;
+  --level-contrast:#111111;
+  --correct:#35C567;
+  --correct-bg:color-mix(in srgb, var(--correct) 9%, white);
+  --level-bg-soft:color-mix(in srgb, var(--level-color) 10%, white);
+}
+
+/* ChinesePod level color is used for level identity and primary quiz actions. */
+.intro-pill,.tb-level-pill,.hint-pill{
+  background:var(--level-bg-soft)!important;
+  border-color:var(--level-color)!important;
+  color:var(--level-color)!important;
+}
+.intro-pill-dot,.tb-fill,.btn-start,.btn-again,.btn-next{background:var(--level-color)!important}
+.intro-h span,.tb-lesson-number,.tb-cnt-current,.tb-progress-meta>span:first-child,
+.feedback-pinyin,.feedback-tabs .nav-link.active{color:var(--level-color)!important}
+.btn-start,.btn-again,.btn-next{color:var(--level-contrast)!important;border-color:var(--level-color)!important}
+.btn-start:hover,.btn-again:hover,.btn-next:hover{filter:brightness(.92);background:var(--level-color)!important}
+.btn-check:focus+.opt,.btn-check+.opt:hover,.btn-check:checked+.opt{border-color:var(--level-color)!important}
+.feedback-tabs .nav-link.active{border-color:var(--level-color)!important}
+
+/* Correct answers are always green; incorrect answers remain ChinesePod red. */
+.opt.s-correct,.opt.s-reveal{background:var(--correct-bg)!important;border-color:var(--correct)!important}
+.opt.s-correct .opt-num,.opt.s-reveal .opt-num{border-color:var(--correct)!important;color:var(--correct)!important}
+.feedback-status.ok,.feedback-answer.ok,.tb-stat-correct{color:var(--correct)!important}
+.feedback-answer.ok{border-left-color:var(--correct)!important}
+.tb-stat-correct i{background:var(--correct)!important}
+
+/* No important/readable interface text may render below 12px. */
+.level-eyebrow,.level-pill,.intro-pill,.ic-p,.ic-m,.tb-level-pill,.cmp-label,.cmp-en,.cmp-tag,.g-sec-title,.cb-en,.ring-lbl,.rchip-l,.level-footer,.q-speaking,.hint-pill,.opt-pinyin,.opt-num,.lesson-meta,.tb-cnt,.tb-meta,.tb-lesson-number,.tb-cnt-label,.tb-cnt-total,.tb-progress-meta,.tb-stat,.tb-progress-step{font-size:12px!important}
+.tb-progress-meta{font-size:12px!important;line-height:1.35}
+
+/* Bootstrap modal shell: closable, responsive, and visually neutral. */
+.quiz-modal{--bs-modal-width:min(1180px,calc(100vw - 28px));}
+.quiz-modal .modal-dialog{margin:14px auto;height:calc(100dvh - 28px)}
+.quiz-modal .modal-content{height:100%;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff}
+.quiz-modal .modal-body{padding:0;overflow:auto;position:relative}
+.quiz-modal .quiz-close{position:absolute;top:10px;right:10px;z-index:1200;width:38px;height:38px;
+  border-radius:50%;background:#fff;border:1px solid var(--border);opacity:1;box-shadow:none}
+.quiz-modal .screen{min-height:100%;height:auto}
+.quiz-modal #s-game.active{min-height:100%;height:100%;}
+.quiz-modal .tb{padding-right:58px}
+@media (max-width:768px){
+  .quiz-modal{--bs-modal-width:100vw}
+  .quiz-modal .modal-dialog{margin:0;height:100dvh;max-width:none}
+  .quiz-modal .modal-content{border:0;border-radius:0}
+  .quiz-modal .quiz-close{position:fixed}
+  .quiz-modal .tb{padding-right:54px}
+}
+
+
+/* ══ REFINED RESPONSIVE MODAL EXPERIENCE ══ */
+.quiz-modal{
+  --bs-modal-width:min(1180px,calc(100vw - 48px));
+  --bs-modal-margin:24px;
+  --bs-modal-border-width:0;
+  --bs-modal-border-radius:22px;
+  --bs-modal-box-shadow:0 24px 70px rgba(0,0,0,.22);
+  padding:0!important;
+}
+.quiz-modal .modal-dialog{
+  width:var(--bs-modal-width);
+  max-width:none;
+  height:calc(100dvh - 48px);
+  max-height:calc(100dvh - 48px);
+  margin:24px auto;
+  transform:translateY(10px) scale(.985);
+  transition:transform .22s ease-out;
+}
+.quiz-modal.show .modal-dialog{transform:none}
+.quiz-modal .modal-content{
+  position:relative;
+  display:flex;
+  height:100%;
+  min-height:0;
+  overflow:hidden;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:22px;
+  background:var(--card);
+  box-shadow:var(--bs-modal-box-shadow);
+}
+.quiz-modal .modal-body{
+  display:flex;
+  flex:1 1 auto;
+  min-height:0;
+  padding:0;
+  overflow:hidden;
+  background:var(--bg);
+}
+.quiz-modal .screen{
+  width:100%;
+  min-height:0!important;
+  height:100%;
+  max-height:100%;
+}
+.quiz-modal #s-game.active{
+  height:100%!important;
+  min-height:0!important;
+  max-height:100%!important;
+  overflow:hidden!important;
+}
+.quiz-modal #s-results.active{
+  height:100%;
+  min-height:0!important;
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  padding:34px 20px;
+}
+.quiz-modal .game-scroll{min-height:0;overflow-y:auto!important}
+.quiz-modal .quiz-close{
+  appearance:none;
+  -webkit-appearance:none;
+  position:absolute;
+  top:14px;
+  right:14px;
+  z-index:1300;
+  display:grid;
+  place-items:center;
+  width:38px;
+  height:38px;
+  padding:0;
+  border:1px solid rgba(26,25,23,.14);
+  border-radius:12px;
+  background:rgba(255,255,255,.94);
+  color:var(--ink);
+  box-shadow:0 5px 16px rgba(26,25,23,.12);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  cursor:pointer;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease,background .18s ease;
+}
+.quiz-modal .quiz-close svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.quiz-modal .quiz-close:hover{transform:translateY(-1px);background:#fff;border-color:var(--level);box-shadow:0 8px 22px rgba(26,25,23,.16)}
+.quiz-modal .quiz-close:active{transform:scale(.96)}
+.quiz-modal .quiz-close:focus-visible{outline:3px solid color-mix(in srgb,var(--level) 28%,transparent);outline-offset:2px}
+.quiz-modal .tb{padding-right:68px}
+.modal-backdrop.show{opacity:.58}
+
+@media (max-width:991.98px){
+  .quiz-modal{--bs-modal-width:calc(100vw - 28px)}
+  .quiz-modal .modal-dialog{width:calc(100vw - 28px);height:calc(100dvh - 28px);max-height:calc(100dvh - 28px);margin:14px auto}
+  .quiz-modal .modal-content{border-radius:20px}
+  .quiz-modal #s-results.active{padding:28px 16px}
+}
+@media (max-width:575.98px){
+  .quiz-modal{--bs-modal-width:calc(100vw - 16px)}
+  .quiz-modal .modal-dialog{width:calc(100vw - 16px);height:calc(100dvh - 16px);max-height:calc(100dvh - 16px);margin:8px auto}
+  .quiz-modal .modal-content{border-radius:18px}
+  .quiz-modal .quiz-close{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:11px}
+  .quiz-modal .tb{padding-right:58px}
+  .quiz-modal #s-results.active{padding:22px 12px}
+}
+@supports not (height:100dvh){
+  .quiz-modal .modal-dialog{height:calc(100vh - 48px);max-height:calc(100vh - 48px)}
+  @media (max-width:991.98px){.quiz-modal .modal-dialog{height:calc(100vh - 28px);max-height:calc(100vh - 28px)}}
+  @media (max-width:575.98px){.quiz-modal .modal-dialog{height:calc(100vh - 16px);max-height:calc(100vh - 16px)}}
+}
+
+
+
+/* ══ MOBILE/TABLET HEADER FIX — keeps close control separate from quiz data ══ */
+.quiz-modal .tb{padding-right:0!important}
+.quiz-modal .tb-inner{box-sizing:border-box}
+
+@media (max-width:700px){
+  .quiz-modal .tb-inner{
+    grid-template-columns:minmax(0,1fr) 64px;
+    grid-template-areas:"lesson count" "progress progress";
+    padding:12px 62px 11px 14px!important;
+    gap:10px 10px!important;
+  }
+  .quiz-modal .tb-lesson{min-width:0;gap:9px}
+  .quiz-modal .tb-brand{width:96px;height:30px;flex:0 0 96px}
+  .quiz-modal .tb-brand img{max-height:30px}
+  .quiz-modal .tb-divider{height:28px}
+  .quiz-modal .tb-lesson-copy{min-width:0;overflow:hidden}
+  .quiz-modal .tb-meta{gap:6px;min-width:0;overflow:hidden}
+  .quiz-modal .tb-lesson-number,
+  .quiz-modal .tb-level-pill{font-size:12px!important;line-height:1.15}
+  .quiz-modal .tb-level-pill{max-width:96px;padding:3px 6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .quiz-modal .tb-lesson-title{font-size:13px!important;line-height:1.25;max-width:100%}
+  .quiz-modal .tb-cnt{padding:6px 5px;border-radius:11px}
+  .quiz-modal .tb-cnt-label{font-size:12px!important;letter-spacing:.06em}
+  .quiz-modal .tb-cnt-current{font-size:20px}
+  .quiz-modal .tb-cnt-total{font-size:12px!important}
+  .quiz-modal .tb-progress-meta{font-size:12px!important;gap:8px;align-items:center}
+  .quiz-modal .tb-live-stats{gap:9px;flex-wrap:wrap;justify-content:flex-end}
+  .quiz-modal .tb-stat{font-size:12px!important;gap:4px}
+  .quiz-modal .tb-progress-step{display:none}
+  .quiz-modal .quiz-close{top:11px;right:11px;width:38px;height:38px;border-radius:11px}
+}
+
+@media (max-width:480px){
+  .quiz-modal .tb-inner{
+    grid-template-columns:minmax(0,1fr) 58px;
+    padding:10px 54px 10px 10px!important;
+    gap:9px 7px!important;
+  }
+  .quiz-modal .tb-lesson{gap:7px}
+  .quiz-modal .tb-brand{width:82px;height:27px;flex-basis:82px}
+  .quiz-modal .tb-brand img{max-height:27px}
+  .quiz-modal .tb-divider{display:none}
+  .quiz-modal .tb-meta{gap:4px}
+  .quiz-modal .tb-level-pill{max-width:76px}
+  .quiz-modal .tb-lesson-title{font-size:12px!important}
+  .quiz-modal .tb-cnt{padding:5px 4px}
+  .quiz-modal .tb-cnt-current{font-size:18px}
+  .quiz-modal .tb-progress-meta{align-items:flex-start;flex-wrap:wrap;row-gap:5px}
+  .quiz-modal .tb-live-stats{margin-left:auto;gap:7px}
+  .quiz-modal .quiz-close{top:9px;right:9px;width:34px;height:34px;border-radius:10px;box-shadow:0 3px 10px rgba(26,25,23,.10)}
+  .quiz-modal .quiz-close svg{width:16px;height:16px}
+}
+
+@media (max-width:365px){
+  .quiz-modal .tb-inner{grid-template-columns:minmax(0,1fr) 54px;padding-right:49px!important}
+  .quiz-modal .tb-brand{width:72px;flex-basis:72px}
+  .quiz-modal .tb-level-pill{display:none}
+  .quiz-modal .tb-stat{font-size:12px!important}
+}
+
+
+
+/* ══ FINAL CLOSE-BUTTON / HEADER COLLISION FIX ══
+   The close control lives in its own reserved rail at every breakpoint. */
+.quiz-modal .modal-content{--quiz-close-size:30px;--quiz-close-gap:16px}
+.quiz-modal .quiz-close{
+  top:var(--quiz-close-gap)!important;
+  right:var(--quiz-close-gap)!important;
+  width:var(--quiz-close-size)!important;
+  height:var(--quiz-close-size)!important;
+  border-radius:50%!important;
+  background:#fff!important;
+  border:1px solid var(--border)!important;
+  box-shadow:0 5px 16px rgba(26,25,23,.11)!important;
+  border-radius: 100px;
+  min-height: 20px !important;
+}
+.quiz-modal .quiz-close svg{width:17px!important;height:17px!important}
+.quiz-modal #s-game .tb-inner{
+  padding-right:calc(var(--quiz-close-size) + (var(--quiz-close-gap) * 2) + 8px)!important;
+}
+
+@media (min-width:992px){
+  .quiz-modal .modal-content{--quiz-close-size:30px;--quiz-close-gap:16px}
+  .quiz-modal #s-game .tb-inner{
+    grid-template-columns:minmax(310px,1fr) minmax(360px,.9fr) 114px!important;
+    grid-template-areas:"lesson progress count"!important;
+    align-items:center!important;
+    gap:18px!important;
+    /* min-height:136px; */
+  }
+  .quiz-modal #s-game .tb-bar-wrap{align-self:center}
+  .quiz-modal #s-game .tb-cnt{align-self:center}
+}
+
+@media (min-width:701px) and (max-width:991.98px){
+  .quiz-modal .modal-content{--quiz-close-size:40px;--quiz-close-gap:14px}
+  .quiz-modal #s-game .tb-inner{
+    grid-template-columns:minmax(0,1fr) 108px!important;
+    grid-template-areas:"lesson count" "progress progress"!important;
+    gap:12px 16px!important;
+  }
+}
+
+@media (max-width:700px){
+  .quiz-modal .modal-content{--quiz-close-size:38px;--quiz-close-gap:10px}
+  .quiz-modal #s-game .tb-inner{
+    padding:11px calc(var(--quiz-close-size) + (var(--quiz-close-gap) * 2) + 6px) 11px 13px!important;
+    grid-template-columns:minmax(0,1fr) 64px!important;
+    grid-template-areas:"lesson count" "progress progress"!important;
+    gap:10px 9px!important;
+  }
+  .quiz-modal #s-game .tb-brand{width:92px!important;flex-basis:92px!important}
+  .quiz-modal #s-game .tb-lesson-copy{min-width:0!important}
+  .quiz-modal #s-game .tb-meta{max-width:100%!important}
+  .quiz-modal #s-game .tb-level-pill{max-width:82px!important}
+}
+
+@media (max-width:520px){
+  .quiz-modal .modal-content{--quiz-close-size:36px;--quiz-close-gap:9px}
+  .quiz-modal #s-game .tb-inner{
+    padding:10px calc(var(--quiz-close-size) + (var(--quiz-close-gap) * 2) + 5px) 10px 10px!important;
+    grid-template-columns:minmax(0,1fr) 58px!important;
+    grid-template-areas:"lesson lesson" "progress count"!important;
+    align-items:center!important;
+    gap:9px 8px!important;
+  }
+  .quiz-modal #s-game .tb-lesson{padding-right:2px!important}
+  .quiz-modal #s-game .tb-brand{width:82px!important;flex-basis:82px!important}
+  .quiz-modal #s-game .tb-divider{display:none!important}
+  .quiz-modal #s-game .tb-cnt{padding:5px 4px!important}
+  .quiz-modal #s-game .tb-progress-meta{display:grid!important;grid-template-columns:auto 1fr!important;gap:6px!important}
+  .quiz-modal #s-game .tb-live-stats{justify-content:flex-end!important;gap:7px!important;flex-wrap:wrap!important}
+  .quiz-modal #s-game .tb-progress-step{display:none!important}
+  .quiz-modal #s-game .tb-level-pill{max-width:74px!important}
+}
+
+@media (max-width:380px){
+  .quiz-modal .modal-content{--quiz-close-size:34px;--quiz-close-gap:8px}
+  .quiz-modal #s-game .tb-inner{
+    grid-template-columns:minmax(0,1fr) 54px!important;
+    padding-right:calc(var(--quiz-close-size) + (var(--quiz-close-gap) * 2) + 4px)!important;
+  }
+  .quiz-modal #s-game .tb-brand{width:72px!important;flex-basis:72px!important}
+  .quiz-modal #s-game .tb-level-pill{display:none!important}
+}
+
+
+
+/* ══ DETAIL SCREEN CONTENT-SAFETY FIX ══
+   Prevents long Pre/Upper lesson vocabulary from overriding adjacent cards
+   and keeps the details screen scrollable at every viewport size. */
+html,body{
+  overflow-x:hidden!important;
+  overflow-y:auto!important;
+}
+body.modal-open{overflow:hidden!important;}
+#s-intro.screen.active{
+  min-height:100dvh;
+  height:auto;
+  overflow:visible;
+  justify-content:flex-start;
+}
+#s-intro{
+  width:100%;
+  padding-block:max(24px,env(safe-area-inset-top)) max(32px,env(safe-area-inset-bottom));
+}
+#s-intro .intro-box{
+  width:min(100%,920px);
+  max-width:920px;
+  margin:auto;
+}
+#s-intro .intro-chars{
+  display:grid!important;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  align-items:stretch;
+  width:100%;
+  gap:8px;
+}
+#s-intro .ic{
+  width:100%;
+  min-width:0;
+  height:100%;
+  overflow:hidden;
+  justify-content:center;
+}
+#s-intro .ic-c,
+#s-intro .ic-p,
+#s-intro .ic-m{
+  display:block;
+  width:100%;
+  max-width:100%;
+  text-align:center;
+  white-space:normal!important;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+#s-intro .ic-c{
+  font-size:clamp(21px,2vw,30px);
+  line-height:1.18;
+}
+#s-intro .ic-p{line-height:1.3;}
+#s-intro .ic-m{line-height:1.35;}
+
+@media (max-width:900px){
+  #s-intro .intro-box{width:min(100%,760px);}
+  #s-intro .intro-chars{grid-template-columns:repeat(3,minmax(0,1fr));}
+}
+@media (max-width:599px){
+  #s-intro{padding-inline:12px;}
+  #s-intro .intro-box{padding:24px 14px;}
+  #s-intro .intro-chars{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;}
+  #s-intro .ic{padding:10px 7px;}
+  #s-intro .ic-c{font-size:clamp(21px,7vw,28px);}
+}
+@media (max-width:360px){
+  #s-intro .intro-chars{grid-template-columns:1fr 1fr;}
+  #s-intro .ic-c{font-size:21px;}
+}
+
 </style>
 </head>
 <body>
+<div class="modal fade quiz-modal" id="quizModal" tabindex="-1" aria-labelledby="quizModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <h1 class="visually-hidden" id="quizModalLabel">ChinesePod Pre-Intermediate Quiz</h1>
+      <div class="modal-body">
+        <button type="button" class="quiz-close" data-bs-dismiss="modal" aria-label="Close quiz" title="Close quiz">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
 <div id="s-level" class="screen active">
   <div class="level-bg" id="levelBg">学</div>
   <div class="level-wrap">
@@ -1347,12 +1739,16 @@ html,body{background:#fff;overflow:hidden}
         Try Again
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 4v6h6M23 20v-6h-6"/><path d="M20.49 9A9 9 0 005.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 013.51 15"/></svg>
       </button>
-      <button class="btn-change-level" onclick="show('s-level')">Change Lesson</button>
+      <button class="btn-change-level" type="button" data-bs-dismiss="modal">Close Quiz</button>
     </div>
   </div>
 </div>
 
 <div class="cf-wrap" id="cfWrap"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
 /* ══════════════════════════════════════════════
@@ -1775,6 +2171,8 @@ function audioFile(type) {
 
 /* ── GAME FLOW ── */
 function startGame() {
+  const quizModalEl = document.getElementById('quizModal');
+  bootstrap.Modal.getOrCreateInstance(quizModalEl).show();
   show('s-game');
   order = shuffle([...Array(DATA.length).keys()]); // randomized question order every quiz
   idx = 0; score = 0; results = [];
@@ -2008,7 +2406,7 @@ function showResults() {
     const ring = document.getElementById('scoreRing');
     ring.style.transition = 'stroke-dashoffset 1.4s cubic-bezier(.4,0,.2,1)';
     ring.style.strokeDashoffset = c - (pct * c);
-    ring.style.stroke = pct >= .75 ? '#1A7A3C' : pct >= .5 ? '#B45309' : '#E1001E';
+    ring.style.stroke = pct >= .75 ? '#35C567' : pct >= .5 ? '#B45309' : '#E1001E';
   }, 150);
   const p = Math.round(pct * 100);
   const msgs = [
@@ -2102,7 +2500,7 @@ function playBeep(ok) {
 /* ── CONFETTI ── */
 function doConfetti() {
   const wrap = document.getElementById('cfWrap');
-  const cols = ['#E1001E', '#1A7A3C', '#B45309', '#2487C1', '#000000'];
+  const cols = [getComputedStyle(document.documentElement).getPropertyValue('--level-color').trim(), '#E1001E', '#35C567', '#000000', '#FFFFFF'];
   for (let i = 0; i < 55; i++) {
     const p = el('div', 'cf');
     p.style.cssText = `left:${10 + Math.random() * 80}%;top:-20px;background:${cols[i % cols.length]};animation-delay:${Math.random() * .5}s;animation-duration:${1.2 + Math.random() * .9}s;transform:rotate(${Math.random() * 360}deg)`;
@@ -2115,9 +2513,28 @@ function doConfetti() {
 LEVELS['newbie'].data.forEach(item => { if (!item.type) item.type = 'character'; });
 // Standalone lesson module — data is hardcoded and no backend call is made.
 document.addEventListener('DOMContentLoaded', () => {
+  // Interface 1: lesson/quiz details remain on the normal page.
+  // Interface 2: the actual quiz and results run inside Bootstrap 5.3.3 modal.
   selectLevel(FIXED_LEVEL);
+
+  const modalEl = document.getElementById('quizModal');
+  const intro = document.getElementById('s-intro');
+  const levelScreen = document.getElementById('s-level');
+
+  // Move the details interface outside the modal and remove the unused level selector
+  // from these fixed-level standalone files.
+  document.body.insertBefore(intro, modalEl);
+  if (levelScreen) levelScreen.remove();
+  show('s-intro');
+
+  modalEl.addEventListener('hidden.bs.modal', () => {
+    show('s-intro');
+    const scroller = document.getElementById('gameScroll');
+    if (scroller) scroller.scrollTop = 0;
+  });
 });
 
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
